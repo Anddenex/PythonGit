@@ -1,6 +1,7 @@
 from urllib import response
 import requests
 
+# The code below has some code commented out that I tried different options and the code below is the one that is active.
 
 # def givecharityurls():
 #     urls = [
