@@ -112,8 +112,8 @@ def giveurls():
         #     print(f"The response code for {url} is {response.status_code} {'.'*30} OK")
         #     print(f'The number of 200 status codes URLs is: {url_count}')
 
-        # else:
-        #     print(f"The url: {url} is {response.status_code} {'.'*30} borked")
+        else:
+            print(f"The url: {url} is {response.status_code} {'.'*30} borked")
 
 
 giveurls()
