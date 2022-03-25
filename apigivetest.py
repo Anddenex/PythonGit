@@ -48,24 +48,21 @@ def giveurls():
         "https://giveblockchain.io/give-to-give/",
     ]
 
+    total = 0
+    for i in urls:
+        total = total + 1
+    print(f'The total number of URLs is: {total}')
+
     for url in urls:
 
         response = requests.get(url)
         response_code = response.status_code
-        # print(f'The response code for {url} is {response.status_code}')
-
+        
         if response_code == 200:
-            counts = response_code
-            print(f'The number of 200 status codes URLs is: {response_code}')
-            print(counts)
+            print(f"The number of 200 status codes URLs is: {response_code} {'.'*30} Great!")
 
-        # if response.status_code == 200:
-        #     count_url = " "  
-        #     count_url = count_url.count(' ')  
-        #     count_url = count_url
-        #     url_count = count_url + 1
-        #     print(f"The response code for {url} is {response.status_code} {'.'*30} OK")
-        #     print(f'The number of 200 status codes URLs is: {url_count}')
+        elif response_code == 403:
+            print(f"The url: {url} is {response.status_code} {'.'*30} Forbidden!")
 
         else:
             print(f"The url: {url} is {response.status_code} {'.'*30} borked")
