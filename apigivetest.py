@@ -59,13 +59,13 @@ def giveurls():
         response_code = response.status_code
         
         if response_code == 200:
-            print(f"The number of 200 status codes URLs is: {response_code} {'.'*30} Great!")
+            print(f"The Response Code returned: {response_code} >>> for {'.'*10} {url:50}")
 
         elif response_code == 403:
-            print(f"The url: {url} is {response.status_code} {'.'*30} Forbidden!")
+            print(f"The Response Code returned: {response_code} >>> for {'.'*10} {url:50}")
 
         else:
-            print(f"The url: {url} is {response.status_code} {'.'*30} borked")
+            print(f"The Response Code returned: {response_code} >>> for {'.'*10} {url:50}")
 
 
 giveurls()
