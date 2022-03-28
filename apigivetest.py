@@ -1,6 +1,8 @@
 from urllib import response
 import requests
 
+#This code will be refactored as I understand Python better and eventually rework the code to 
+#perform all the results I want returned.
 
 def giveurls():
     urls = [
@@ -59,13 +61,13 @@ def giveurls():
         response_code = response.status_code
         
         if response_code == 200:
-            print(f"The Response Code returned: {response_code} >>> for {'.'*10} {url:50}")
+            print(f"The Response Code returned = {response_code} >>> for {'.'*10} {url:50}")
 
         elif response_code == 403:
-            print(f"The Response Code returned: {response_code} >>> for {'.'*10} {url:50}")
+            print(f"The Response Code returned = {response_code} >>> for {'.'*10} {url:50}")
 
         else:
-            print(f"The Response Code returned: {response_code} >>> for {'.'*10} {url:50}")
+            print(f"The Response Code returned = {response_code} >>> for {'.'*10} {url:50}")
 
 
 giveurls()
