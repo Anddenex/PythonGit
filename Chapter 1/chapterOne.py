@@ -69,7 +69,7 @@
 def userInfo():
     users = {
         "person1" : {'Name': 'Andrew', 'Age': '46', 'Sex': 'male',},
-        "person2" : {'Name': 'Jordan', 'Age': '23', 'Sex': 'male',},
+        "person2" : {'Name': 'Jordan', 'Age': '24', 'Sex': 'male',},
         "person3" : {'Name': 'Hamlet', 'Age': '30', 'Sex': 'male',},
         "person4" : {'Name': 'Eric', 'Age': '33', 'Sex': 'male',},
 
@@ -82,6 +82,8 @@ def userInfo():
             print(person)
             #This print should display the value of the inner dictionary
             print(f"{person} : {users[persons]}")
+            #This prints a statement using the values of the nested dictionary to call Name, Age, and Sex of user.
+            print(f"{users[persons].get('Name')} is {users[persons].get('Age')} and is {users[persons].get('Sex')}.")
         
 
 userInfo()
