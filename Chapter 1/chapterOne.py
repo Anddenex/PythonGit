@@ -1,70 +1,92 @@
 
-# print("Hello, New Python Learner!")
-# print("2 + 3 = ", 2 + 3)
+print("Hello, New Python Learner!")
+print("2 + 3 = ", 2 + 3)
 
 # Creating the function named "Hello"
 
-# def hello():
-#     print("Hello")
-#     print("Computers are fun!")
+def hello():
+    print("Hello")
+    print("Computers are fun!")
 
-# hello()
+hello()
 
-# def greet(person):
-#     print(f'Hello, {person}!')
-#     print("How are you?")
+def greet(person):
+    print(f'Hello, {person}!')
+    print("How are you?")
 
-# greet("Andrew")
+greet("Andrew")
 
-# print()
-# print("This function is illustrating choatic behavior in code")
-# print()
+print()
+print("This function is illustrating choatic behavior in code")
+print()
 
-# def chaos():
-#     x = eval(input("Enter a number between 0 and 1: "))
-#     y = eval(input("Enter a number between 0 and 1: "))
-#     print(f'X: {x:<20}   Y: {y}')
-#     print(f"{'-'*80}")
-#     for i in range(10):
-#         x = 3.9 * x * (1 - x)
-#         y = 3.9 * y * (1 - y)
-#         print(f'X: {x:<20}   Y: {y:<20}')
+def chaos():
+    x = eval(input("Enter a number between 0 and 1: "))
+    y = eval(input("Enter a number between 0 and 1: "))
+    print(f'X: {x:<20}   Y: {y}')
+    print(f"{'-'*80}")
+    for i in range(10):
+        x = 3.9 * x * (1 - x)
+        y = 3.9 * y * (1 - y)
+        print(f'X: {x:<20}   Y: {y:<20}')
 
 
-# chaos()
+chaos()
 
 
 #Modified version of the chaos theory using 20 values instead of 10
 #Also modifies the user input as to the range of values that will be printed
-# def chaosModified():
-#     x = eval(input("Enter a number between 0 and 1: "))
-#     y = eval(input("Enter a number between 0 and 1: "))
-#     z = eval(input("How many numbers should I print? "))
-#     print(f'X: {x:<30}   | Y: {y}')
-#     print(f"{'-'*80}")
-#     for i in range(z):
-#         x = 3.9 * x * (1 - x)
-#         y = 3.9 * y * (1 - y)
-#         #The "4f" in this format will only allow the result to be four decimal places
-#         print(f'X: {x:<30.4f}   | Y: {y:<30.4f}')
+def chaosModified():
+    x = eval(input("Enter a number between 0 and 1: "))
+    y = eval(input("Enter a number between 0 and 1: "))
+    z = eval(input("How many numbers should I print? "))
+    print(f'X: {x:<30}   | Y: {y}')
+    print(f"{'-'*80}")
+    for i in range(z):
+        x = 3.9 * x * (1 - x)
+        y = 3.9 * y * (1 - y)
+        #The "4f" in this format will only allow the result to be four decimal places
+        print(f'X: {x:<30.4f}   | Y: {y:<30.4f}')
 
 
-# chaosModified()
-# print()
-# print()
+chaosModified()
+print()
+print()
 
-# #Not in this Chapter but a great learning option for f-strings with dictionaries
-# person = {
-#     'name': 'Andrew',
-#     'age': '46',
-#     'sex': 'male',
-# }
+#Modified version where the user inputs how many values they want to see
+#with a third value c
+def chaosModified3():
+    x = eval(input("Enter a number between 0 and 1: "))
+    y = eval(input("Enter a number between 0 and 1: "))
+    z = eval(input("Enter a number between 0 and 1: "))
+    q = eval(input("How many numbers should I print? "))
+    print(f'X: {x:<30}   | Y: {y:<30}  | Z: {z}')
+    print(f"{'-'*80}")
+    for i in range(q):
+        x = 3.9 * x * (1 - x)
+        y = 3.9 * y * (1 - y)
+        z = 3.9 * z * (1 - z)
+        #The "4f" in this format will only allow the result to be four decimal places
+        print(f'X: {x:<30.4f}   | Y: {z:<30.4f}  | Z: {z:<30.4f}')
 
-# print(f"{person.get('name')} is {person.get('age')} and is {person.get('sex')}.")
-# print()
-# print()
-#This is seeking to create a dictionary with a nested dictionary with
-# a for loop to print the nested dictionary information
+
+chaosModified3()
+print()
+print()
+
+#Not in this Chapter but a great learning option for f-strings with dictionaries
+person = {
+    'name': 'Andrew',
+    'age': '46',
+    'sex': 'male',
+}
+
+print(f"{person.get('name')} is {person.get('age')} and is {person.get('sex')}.")
+print()
+print()
+
+This is seeking to create a dictionary with a nested dictionary with
+a for loop to print the nested dictionary information
 
 def userInfo():
     users = {
