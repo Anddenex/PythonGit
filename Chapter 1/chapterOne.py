@@ -80,10 +80,18 @@ def userInfo():
         for person in users[persons]:
             #This print below will access or return the key of the inner dictionary (i.e. Name, Age, Sex)
             print(person)
+
             #This print should display the value of the inner dictionary
             print(f"{person} : {users[persons]}")
+
             #This prints a statement using the values of the nested dictionary to call Name, Age, and Sex of user.
-            print(f"{users[persons].get('Name')} is {users[persons].get('Age')} and is {users[persons].get('Sex')}.")
+            print(f"{users[persons].get('Name')} is {users[persons].get('Age')} year old and is {users[persons].get('Sex')}.")
+
+            #This should print the values within the nested dictionary:
+            print(f"{person}, : {users[persons][person]}")
+
+            #This should print an actual statement "{Name} is {Age} years old and is {Sex}" and only works if all persons are male as to pronoun "he"
+            print(f"{persons} is .... {users[persons].get('Name')} and he is {users[persons].get('Age')} year old and is {users[persons].get('Sex')}.")
         
 
 userInfo()
