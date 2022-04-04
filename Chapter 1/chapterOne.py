@@ -1,3 +1,11 @@
+#This is to help with the initial understanding of the process of creating a program:
+#Program anlysis = studying problem to be solved
+#Program specification = what exactly the program will do
+#Design = writing the code
+#Implementation = Translating design into a programming language
+#Testing/Debugging = Finding and fixing errors
+#Maintenance = Keeping the program up to date with evolving needs
+
 
 print("Hello, New Python Learner!")
 print("2 + 3 = ", 2 + 3)
