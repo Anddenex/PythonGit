@@ -93,8 +93,8 @@ print(f"{person.get('name')} is {person.get('age')} and is {person.get('sex')}."
 print()
 print()
 
-This is seeking to create a dictionary with a nested dictionary with
-a for loop to print the nested dictionary information
+# This is seeking to create a dictionary with a nested dictionary with
+# a for loop to print the nested dictionary information
 
 def userInfo():
     users = {
