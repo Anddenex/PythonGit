@@ -1,0 +1,17 @@
+{
+    "baseUrl": "https://app.giveblockchain.io/",
+    "login": "https://app.giveblockchain.io/",
+    "inventory": "https://app.giveblockchain.io/inventory",
+    "nodes": "https://app.giveblockchain.io/nodes",
+    "vault": "https://app.giveblockchain.io/vault",
+    "dashboard": "https://giveblockchain.io/dashboard",
+    "experimentalSessionSupport": true,
+    "experimentalStudio": true,
+
+    "env":
+    {
+        "email": "aexon@nerdsunite.me",
+        "password": "IAmThe#1Nerd!"
+    }
+    
+}
