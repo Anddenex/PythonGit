@@ -36,7 +36,7 @@
 
 # testScores()
 
-#This will show the average of however many test scores the user specifies they have.
+# #This will show the average of however many test scores the user specifies they have.
 # def testScores():
 #     print("This program computes the average of three test scores.")
 #     test_amount = eval(input("How many test scores do you have to input? "))
@@ -54,7 +54,7 @@
 
 # testScores()
 
-#This will print, 0*0, 1*1, 2*2, etc...
+# #This will print, 0*0, 1*1, 2*2, etc...
 # for i in range(5):
 #     print(i * i)
 
@@ -62,8 +62,8 @@
 # for d in [3, 1, 4, 1, 5]:
 #     print(d)
 
-# # #This will print the list in the same row with a space between the list of numbers. If you put a symbol in the " " 
-# # # it will print that character between the list of numbers
+# # This will print the list in the same row with a space between the list of numbers. If you put a symbol in the " " 
+# # it will print that character between the list of numbers
 # for d in [3, 1, 4, 1, 5]:
 #     print(d, end=" ")
 
@@ -77,7 +77,7 @@
 # print()
 
 
-# # #This will print Hello five times in the same row with a space between each Hello
+# # # #This will print Hello five times in the same row with a space between each Hello
 # for h in range(5):
 #     print("Hello", end=" ")
 
@@ -91,7 +91,7 @@
 
 # print("End")
 
-#This is a solution/program to convert Celsisu temps to Fahrenheit
+# #This is a solution/program to convert Celsisu temps to Fahrenheit
 
 # def conversion():
 #     for d in range(5):
@@ -102,34 +102,65 @@
 
 # conversion()
 
-#This solution is to use the convert program to print a table of two columns
-#showing the degree of Celsius every 10 degrees and its fahrenheit equivalent in the second column
+# #This solution is to use the convert program to print a table of two columns
+# #showing the degree of Celsius every 10 degrees and its fahrenheit equivalent in the second column
 
-def conversion2():
-    print(f'Celsius:     | Fahrenheit: ')
-    print(f"{'-'*30}")
-    for d in [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]:
-        fahrenheit = 9/5 * d +32
-        celsius = d
-        print(f'{celsius:<12} | {fahrenheit}')
-
-
-conversion2()
-print()
+# def conversion2():
+#     print(f'Celsius:     | Fahrenheit: ')
+#     print(f"{'-'*30}")
+#     for d in [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]:
+#         fahrenheit = 9/5 * d +32
+#         celsius = d
+#         print(f'{celsius:<12} | {fahrenheit}')
 
 
-def futval():
-
-    print("This program calculates the furture value of a 10-year investment.")
-
-    principle = eval(input("Enter the initial principle value: "))
-    apr = eval(input("Enter the annual interest rate: "))
-
-    for i in range(10):
-        principle = principle * (1 + apr)
-
-    print(f"The principle value in 10 years is: {principle:.2f}")
+# conversion2()
+# print()
 
 
+# def futval():
 
-futval()
+#     print("This program calculates the furture value of a investment.")
+
+#     principle = eval(input("Enter the initial principle value: "))
+#     apr = eval(input("Enter the annual interest rate: "))
+#     years_invested = eval(input("Enter the number of years for this investment: "))
+
+#     for i in range(years_invested):
+#         principle = principle * (1 + apr)
+#         i = i +1
+#         print(f"The {i} year principle is: ${principle}")
+
+#     print()
+
+
+#     print(f"The total principle value in {years_invested} years is: {principle:,.2f}")
+
+
+# futval()
+
+
+def futval2():
+
+
+    print("This program calculates a fixed investement over a specified number of years")
+
+    principle = eval(input("Enter the initial principle investment value: "))
+    ir = (float(input("Enter the annual interest rate: ")))/100
+    years_invested = eval(input("Enter the number of years for this investment: "))
+    yearly_compound = 1
+
+    for i in range(years_invested):
+        capital_gain = principle * (pow((1 + (ir/yearly_compound)), yearly_compound * years_invested))
+        i = i +1
+        roi = capital_gain - principle
+        print(f"The {i} year principle is: ${roi:,.2f}")
+
+    print()
+
+
+    print(f"The total principle value in {years_invested} years is: {roi:,.2f} ")
+    print()
+
+
+futval2()
