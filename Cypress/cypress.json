@@ -10,8 +10,8 @@
 
     "env":
     {
-        "email": "aexon@nerdsunite.me",
-        "password": "IAmThe#1Nerd!"
+        "email": "email",
+        "password": "password"
     }
     
 }
