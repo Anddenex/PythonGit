@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 describe('Login', () => {
-    it('Login and Check Menu Navigation', () => {
+    it('Login and Confirm Page Loaded', () => {
         cy.login(Cypress.env('email'), Cypress.env('password'));
         // Checking the Inventory Nav
         cy.get("[data-cy='nav-inventory']").click();
@@ -12,7 +12,7 @@ describe('Login', () => {
         cy.wait(5000);
     })
 
-    it('Login and Check Menu Navigation', () => {
+    it('Login and Confirm Nodes Page Loaded', () => {
         // Checking the Nodes Nav
         cy.login(Cypress.env('email'), Cypress.env('password'));
         cy.get("[data-cy='nav-nodes']").click();
@@ -24,7 +24,7 @@ describe('Login', () => {
 
     })
 
-    it('Login and Check Menu Navigation', () => {
+    it('Login and Confirm Vault Page Loaded', () => {
         // Checking the Vault Nav
         cy.login(Cypress.env('email'), Cypress.env('password'));
         cy.get("[data-cy='nav-vault']").click();
@@ -36,7 +36,7 @@ describe('Login', () => {
 
     })
 
-    it('Login and Check Menu Navigation', () => {
+    it('Login and Confirm Summary Page Loaded', () => {
         // Checking the Summary Nav
         cy.login(Cypress.env('email'), Cypress.env('password'));
         cy.get("[data-cy='nav-summary']").click();
@@ -48,7 +48,7 @@ describe('Login', () => {
 
     })
 
-    it('Login and Check Menu Navigation', () => {
+    it('Login and Confirm Dashboard Page Loaded', () => {
         // Checking the Dashboard Nav
         cy.login(Cypress.env('email'), Cypress.env('password'));
         cy.get("a[class='v-btn v-btn--depressed v-btn--flat v-btn--has-bg v-btn--tile theme--light v-size--default topBar-Nav px-4 transparent black--text'] span[class='v-btn__content']").click();
