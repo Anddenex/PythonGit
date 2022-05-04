@@ -7,11 +7,11 @@ describe('Login', () => {
             .should('include', "giveblockchain")
         cy.get('[class="hover-wrap-inner img-loaded"]')
             .should('have.class', "hover-wrap-inner img-loaded")
-         
+        cy.wait(2000)
     })
 
     it('Expecting/Asserting text for button accurate', () => {
-        cy.percySnapshot()
+        //cy.percySnapshot()
         cy.get('[class="nectar-button jumbo see-through accent-color"]').should(($necton) => {
             //expect($necton).to.have.length(3)
             expect($necton.eq(0), 'first button').to.contain('Give')
@@ -31,7 +31,7 @@ describe('Login', () => {
             .click()
         cy.url()
             .should("include", "/give-information/")
-        cy.percySnapshot()
+       // cy.percySnapshot()
         cy.get('h1').should(($h1) => {
             expect($h1, 'H1 Title').to.contain('Give')
             expect($h1, 'H1 Title').to.have.attr('style', "text-align: center")
@@ -47,7 +47,7 @@ describe('Login', () => {
             .click()
         cy.url()
             .should("include", "/mission-information/")
-        cy.percySnapshot()
+        //cy.percySnapshot()
         cy.get('h1').should(($h1) => {
             expect($h1, 'H1 Title').to.contain('We Can Make a Change')
           })    
@@ -58,14 +58,44 @@ describe('Login', () => {
             .eq(2)
             .should('have.text', "Blockchain")
             .should('have.attr', 'style', 'margin-right: 15px; margin-left: 15px; visibility: visible; color: rgb(255, 255, 255); border-color: rgba(255, 255, 255, 0.75);')
-            .should('have.attr', 'href', "/give-node-information")
+            .should('have.attr', 'href', "/give-node-information/")
             .click()
         cy.url()
             .should("include", "/give-node-information/")
-        cy.percySnapshot()
+        //cy.percySnapshot()
         cy.get('h4').should(($h4) => {
             expect($h4, 'H4 Title').to.contain('Login to make purchases and give.')
             expect($h4, 'style assert').to.have.attr('style', "text-align: center;")
+          })    
+    })
+
+    it('Covering the Sign Up Free button', () => {
+        cy.get('[class="nectar-button jumbo see-through accent-color"]')
+            .eq(3)
+            .should('have.text', "Sign Up Free")
+            .should('have.attr', 'style', 'margin-right: 15px; margin-left: 15px; visibility: visible; color: rgb(255, 255, 255); border-color: rgba(255, 255, 255, 0.75);')
+            .should('have.attr', 'href', "/lets-give/")
+            .click()
+        cy.url()
+            .should("include", "/lets-give/")
+        //cy.percySnapshot()
+        cy.get('h5').should(($h5) => {
+            expect($h5, 'H5 Title').to.contain("Join The Movement")
+          })    
+    })
+
+    it('Covering the Login button', () => {
+        cy.get('[class="nectar-button jumbo see-through accent-color"]')
+            .eq(4)
+            .should('have.text', "Login")
+            .should('have.attr', 'style', 'margin-right: 15px; margin-left: 15px; visibility: visible; color: rgb(255, 255, 255); border-color: rgba(255, 255, 255, 0.75);')
+            .should('have.attr', 'href', "/login/")
+            .click()
+        cy.url()
+            .should("include", "/login/")
+        //cy.percySnapshot()
+        cy.get('h5').should(($h5) => {
+            expect($h5, 'H5 Title').to.contain("Login to access your account:")
           })    
     })
 })

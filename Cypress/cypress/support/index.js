@@ -14,7 +14,7 @@
 // ***********************************************************
 
 import '@applitools/eyes-cypress/commands'
-import '@percy/cypress';
+//import '@percy/cypress';
 
 // Import commands.js using ES2015 syntax:
 import './commands'
