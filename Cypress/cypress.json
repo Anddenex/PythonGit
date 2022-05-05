@@ -10,10 +10,10 @@
 
     "env":
     {
-        "email": "aexon@nerdsunite.me",
-        "password": "IAmThe#1Nerd!",
-        "wallet": "Sm!leTestingFlyfisher*1",
-        "phrase": "pudding, nut, into, draw, give, boost, lens, token, orphan, scout, error, enjoy"
+        "email": "email",
+        "password": "pass",
+        "wallet": "pass",
+        "phrase": "phrase"
     }
     
 }
