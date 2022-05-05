@@ -10,7 +10,7 @@ describe('Sidebar Tests', () => {
     it('Expecting/Asserting coin is accurate with styling', () => {
         //cy.percySnapshot()
         cy.get('[class="v-responsive__content"]').should(($coin) => {
-            expect($coin.eq(0), 'first button')
+            expect($coin.eq(0), 'first coin')
                 .to.contain("Bitcoin")
                 .to.have.attr('style', "width: 300px;")
             expect($coin.eq(1), 'second button')
