@@ -1,3 +1,6 @@
 Cypress/cypress.json
 Cypress/cypress/integration/.DS_Store
 Cypress/node_modules
+Cypress/cypress/videos
+Cypress/cypress/screenshots
+Cypress/cypress/fixtures/userData.json
