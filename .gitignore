@@ -1,2 +1,3 @@
 Cypress/cypress.json
 Cypress/cypress/integration/.DS_Store
+Cypress/node_modules
