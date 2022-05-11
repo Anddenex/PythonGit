@@ -6,42 +6,42 @@ describe('Sidebar Tests', () => {
         cy.wait(500)   
       })
 
-    it('Login and Confirm Sidebar Share', () => {
-        // WordPress log in logs you into the Dashboard rather than Summary or Balances
-        // This sections covers the chevron clicks making sure they open correctly
-        cy.get("#menu-icon")
-            .click();
-        cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
-            .eq(0)
-            .click();
-        cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
-            .eq(1)
-            .click();
-        cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
-            .eq(2)
-            .click();
-        cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
-            .eq(3)
-            .click();
-        cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
-            .eq(4)
-            .click();
-        // This section covers the Share link and page content
-        cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
-            .eq(0)
-            .click();
-        cy.get("[class='v-list-item__title']")
-            .eq(0)
-            .should('have.text', "Share Page")
-            .click();
-        cy.get('[class="v-card__title text-h6 text-sm-h5"]')
-            .contains("Share with your Friends!")
-        cy.get('[class="v-card__text text-center"]')
-            .contains("Share with friends and family. Click the share button below.")
-        cy.get('[class="mx-auto text-center"]')
-            //.contains("Share Give")
-            .click()        
-    })
+    // it('Login and Confirm Sidebar Share', () => {
+    //     // WordPress log in logs you into the Dashboard rather than Summary or Balances
+    //     // This sections covers the chevron clicks making sure they open correctly
+    //     cy.get("#menu-icon")
+    //         .click();
+    //     cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
+    //         .eq(0)
+    //         .click();
+    //     cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
+    //         .eq(1)
+    //         .click();
+    //     cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
+    //         .eq(2)
+    //         .click();
+    //     cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
+    //         .eq(3)
+    //         .click();
+    //     cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
+    //         .eq(4)
+    //         .click();
+    //     // This section covers the Share link and page content
+    //     cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
+    //         .eq(0)
+    //         .click();
+    //     cy.get("[class='v-list-item__title']")
+    //         .eq(0)
+    //         .should('have.text', "Share Page")
+    //         .click();
+    //     cy.get('[class="v-card__title text-h6 text-sm-h5"]')
+    //         .contains("Share with your Friends!")
+    //     cy.get('[class="v-card__text text-center"]')
+    //         .contains("Share with friends and family. Click the share button below.")
+    //     cy.get('[class="mx-auto text-center"]')
+    //         //.contains("Share Give")
+    //         .click()        
+    // })
 
     it('Login and Confirm Account Tab: Profile and Advanced Settings', () => {
         cy.get("#menu-icon")
@@ -55,43 +55,64 @@ describe('Sidebar Tests', () => {
             .click()
         cy.get('h1')
             .contains("edit_profile")
-        cy.get(".text-capitalize > .v-btn__content")
-            .contains("Edit Profile Picture")
-        cy.get('[class="v-label v-label--active theme--light"]')
+        cy.get('[class="ui-heading"]')
+            .contains("Edit Profile")
+        cy.get('[class="field-label"]')
             .eq(0)
             .should('have.text', "First Name")
-        cy.get('[class="v-label v-label--active theme--light"]')
+        cy.get('[class="field-label"]')
             .eq(1)
             .should('have.text', "Last Name")
-        cy.get('[class="v-label v-label--active theme--light"]')
+
+        cy.get('[class="field-label"]')
             .eq(2)
-            .should('have.text', "Enter phone number")
-        cy.get('[class="v-label v-label--active theme--light"]')
-            .eq(3)
             .should('have.text', "Enter Email Address")
-        cy.get("#input-189")
+
+        cy.get('[class="phone-label"]')
+            .eq(0)
+            .should('have.text', "Enter Phone Number")
+
+        cy.get('[class="ui-input"]')
+            .eq(0)
             .click()
             .clear()
             .type("Change")
-            .should('have.value', "Change")
-        cy.get("#input-192")
+
+        cy.get('[class="ui-input"]')
+            .eq(1)
             .click()
             .clear()
             .type("Name")
-            .should('have.value', "Name")
 
-        cy.get("#input-201")
+        cy.get('[class="button-title"]')
+            .click()
+
+        cy.get('[class="ui-input"]')
+            .eq(0)
             .click()
             .clear()
-            .type("1-800-801-3546")
-            .should('have.value', "(800) 801-3546")
-        // cy.get('.v-input--hide-details > .v-input__control > .v-input__slot > .v-select__slot > .v-input__append-inner > .v-input__icon > .v-icon')
-        //     .click()
-        cy.get("[type='submit']")
+            .type("Andrew")
+
+        cy.get('[class="ui-input"]')
+            .eq(1)
             .click()
+            .clear()
+            .type("Exon")
+        
+        cy.get('[class="button-title"]')
+            .click()
+
         cy.get(".v-toolbar__content > .v-btn > .v-btn__content > .v-icon")
             .click()
 
+    })
+        
+    it('Login and Confirm Account Tab: Profile and Advanced Settings', () => {
+        cy.get("#menu-icon")
+            .click();
+        cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
+            .eq(1)
+            .click();
         cy.get("[class='v-list-item__title']")
             .eq(1)
             .contains("Advanced Settings")
@@ -102,14 +123,17 @@ describe('Sidebar Tests', () => {
             .contains("Reveal Private Key")
         cy.get('p')
             .contains("Using this tool, you will be able to download and save your private key which is connected to your Ethereum address BE VERY CAREFUL WITH THIS KEY as it can grant the holder total control over your Ethereum address.")
-        cy.get('#pkey')
-            .should('have.class', "v-btn v-btn--disabled v-btn--flat theme--light v-size--default")
-        cy.get("#input-215")
+
+        cy.get('[class="v-text-field__slot"]')
             .click()
             .type(Cypress.env('wallet'))
         cy.get('#pkey')
             .should('have.class', "v-btn v-btn--contained v-btn--is-elevated v-btn--has-bg theme--light v-size--default")
-            .should('have.attr', 'style', 'color:#ee3c3a')
+        cy.get('[class="v-icon notranslate material-icons theme--dark"]')
+            .click()
+        cy.get("[class='v-list-item__title']")
+            .eq(1)
+            .contains("Advanced Settings")
     })
 
     it('Login and Confirm Security Tab: 2FA, Account Password, Encryption Password', () => {
