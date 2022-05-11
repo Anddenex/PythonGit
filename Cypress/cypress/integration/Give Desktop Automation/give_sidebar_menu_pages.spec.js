@@ -54,7 +54,7 @@ describe('Sidebar Tests', () => {
             .contains("Profile")
             .click()
         cy.get('h1')
-            .contains("Update Profile")
+            .contains("edit_profile")
         cy.get(".text-capitalize > .v-btn__content")
             .contains("Edit Profile Picture")
         cy.get('[class="v-label v-label--active theme--light"]')
