@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 // When a customer is logged out
+// Updates
+
 describe('Login', () => {
     beforeEach(() => {
         cy.visit("https://giveblockchain.io/mission-information/")
