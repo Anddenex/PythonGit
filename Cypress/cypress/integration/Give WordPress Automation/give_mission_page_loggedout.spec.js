@@ -77,22 +77,22 @@ describe('Login', () => {
             expect($h4.eq(6), 'Fire Core Value Feature Compassion')
                 .to.have.contain("Compassion")
         })
-        The core values features the selectors change everytime, so I can use those. The moment the site is refreshed the selector changes.
-        Will have to look at another way.
+        //The core values features the selectors change everytime, so I can use those. The moment the site is refreshed the selector changes.
+        //Will have to look at another way.
 
-        cy.wait(2000)
-        cy.get('#fws_62759d4f856e2 > .row_col_wrap_12_inner > :nth-child(1) > .vc_column-inner > :nth-child(1) > .vc_custom_heading')
-            .contains("We will always have the courage and the strength required to take on difficult challenges to champion for people who are in the most need. We unite with good people who are unafraid and unabashed in their commitment to contribute.") 
-        cy.get('#fws_62759d4f856e2 > .row_col_wrap_12_inner > :nth-child(2) > .vc_column-inner > :nth-child(1) > .vc_custom_heading')
-            .contains('We are a community. We collaborate with each other to achieve our mission. We are individuals, companies, families and faith-based groups who set aside petty differences and disparate beliefs to focus our efforts on supporting and achieving our common goals.')
-        cy.get('#fws_62759d4f856e2 > .row_col_wrap_12_inner > :nth-child(3) > .vc_column-inner > :nth-child(1) > .vc_custom_heading')
-            .contains('Those in our community come from all walks of life. Everyone involved comes from a wide variety of backgrounds, not just because it’s the right thing to do, but because it makes our community stronger. We believe greatness exists in everyone.')
-        cy.get('#fws_62759d4f8628b > .row_col_wrap_12_inner > :nth-child(1) > .vc_column-inner > :nth-child(1) > .vc_custom_heading')
-            .contains('Our core values act as guiding principles to dictate behavior as we set goals. Our values serve as an unwavering guide in making strategic decisions in technology investments and guide us in the direction where we can make the largest impact.')
-        cy.get('')
-            .contains('Give is unique. Give provides a platform and the technology to enable good people to do good things. 100% of all donations contributed by community members on the Give platform are delivered to the cause. We do not take administration fees.')
-        cy.get('')
-            .contains('At the heart of every decision is our unwavering commitment to deliver compassionate service for all nations, communities, neighborhoods, and people we serve. We strive to create a brighter future by supporting causes to end suffering and create opportunities globally.')      
+        // cy.wait(2000)
+        // cy.get('#fws_62759d4f856e2 > .row_col_wrap_12_inner > :nth-child(1) > .vc_column-inner > :nth-child(1) > .vc_custom_heading')
+        //     .contains("We will always have the courage and the strength required to take on difficult challenges to champion for people who are in the most need. We unite with good people who are unafraid and unabashed in their commitment to contribute.") 
+        // cy.get('#fws_62759d4f856e2 > .row_col_wrap_12_inner > :nth-child(2) > .vc_column-inner > :nth-child(1) > .vc_custom_heading')
+        //     .contains('We are a community. We collaborate with each other to achieve our mission. We are individuals, companies, families and faith-based groups who set aside petty differences and disparate beliefs to focus our efforts on supporting and achieving our common goals.')
+        // cy.get('#fws_62759d4f856e2 > .row_col_wrap_12_inner > :nth-child(3) > .vc_column-inner > :nth-child(1) > .vc_custom_heading')
+        //     .contains('Those in our community come from all walks of life. Everyone involved comes from a wide variety of backgrounds, not just because it’s the right thing to do, but because it makes our community stronger. We believe greatness exists in everyone.')
+        // cy.get('#fws_62759d4f8628b > .row_col_wrap_12_inner > :nth-child(1) > .vc_column-inner > :nth-child(1) > .vc_custom_heading')
+        //     .contains('Our core values act as guiding principles to dictate behavior as we set goals. Our values serve as an unwavering guide in making strategic decisions in technology investments and guide us in the direction where we can make the largest impact.')
+        // cy.get('')
+        //     .contains('Give is unique. Give provides a platform and the technology to enable good people to do good things. 100% of all donations contributed by community members on the Give platform are delivered to the cause. We do not take administration fees.')
+        // cy.get('')
+        //     .contains('At the heart of every decision is our unwavering commitment to deliver compassionate service for all nations, communities, neighborhoods, and people we serve. We strive to create a brighter future by supporting causes to end suffering and create opportunities globally.')      
     })
 
     it('Expecting/Asserting 50/50 section', () => {
