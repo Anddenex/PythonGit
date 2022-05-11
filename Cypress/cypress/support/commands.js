@@ -14,7 +14,7 @@
 
 Cypress.Commands.add('login', (email, password) => {
     cy.visit('login');
-    cy.url().should("include", "giveblockchain");
+    cy.url().should("include", "giveblockchain");   
     cy.get("#email").type(email);
     cy.get("[type='password']").type(password);
     cy.get("button[type='submit']").click();
