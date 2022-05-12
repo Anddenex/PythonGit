@@ -18,18 +18,16 @@ describe('Login', () => {
             .click();
         cy.get(".elevation-0 > a > .v-btn > .v-btn__content")
             .click();
-        cy.get("#input-124")
-            .type("Gala")
-        cy.get("tbody > tr > :nth-child(2)")
-            .should('have.text', "Gala");
-        cy.get("#input-124")
-            .clear();
-        cy.get("#input-124")
-            .type("Ethereum")
-        cy.get("tbody > :nth-child(2) > :nth-child(2)")
-            .should('have.text', "Ethereum Classic");
-        cy.get("#input-124")
-            .clear();
+        cy.prices_search('Dash')
+        cy.prices_search('Gala')
+        cy.prices_search('Ethereum')
+        cy.prices_search('Ethereum Classic')
+        cy.prices_search('Populous')
+        cy.prices_search('Waves')
+        cy.prices_search('Factom')
+        cy.prices_search('Ubiq')
+        cy.prices_search('Swarm City Token')
+        cy.prices_search('Elastic')
         cy.get(".v-select__slot > .v-input__append-inner > .v-input__icon > .v-icon")
             .click();
         cy.get("[class='v-list-item__content']")
