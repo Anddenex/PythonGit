@@ -6,42 +6,42 @@ describe('Sidebar Tests', () => {
         cy.wait(500)   
       })
 
-    // it('Login and Confirm Sidebar Share', () => {
-    //     // WordPress log in logs you into the Dashboard rather than Summary or Balances
-    //     // This sections covers the chevron clicks making sure they open correctly
-    //     cy.get("#menu-icon")
-    //         .click();
-    //     cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
-    //         .eq(0)
-    //         .click();
-    //     cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
-    //         .eq(1)
-    //         .click();
-    //     cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
-    //         .eq(2)
-    //         .click();
-    //     cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
-    //         .eq(3)
-    //         .click();
-    //     cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
-    //         .eq(4)
-    //         .click();
-    //     // This section covers the Share link and page content
-    //     cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
-    //         .eq(0)
-    //         .click();
-    //     cy.get("[class='v-list-item__title']")
-    //         .eq(0)
-    //         .should('have.text', "Share Page")
-    //         .click();
-    //     cy.get('[class="v-card__title text-h6 text-sm-h5"]')
-    //         .contains("Share with your Friends!")
-    //     cy.get('[class="v-card__text text-center"]')
-    //         .contains("Share with friends and family. Click the share button below.")
-    //     cy.get('[class="mx-auto text-center"]')
-    //         //.contains("Share Give")
-    //         .click()        
-    // })
+    it('Login and Confirm Sidebar Share', () => {
+        // WordPress log in logs you into the Dashboard rather than Summary or Balances
+        // This sections covers the chevron clicks making sure they open correctly
+        cy.get("#menu-icon")
+            .click();
+        cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
+            .eq(0)
+            .click();
+        cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
+            .eq(1)
+            .click();
+        cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
+            .eq(2)
+            .click();
+        cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
+            .eq(3)
+            .click();
+        cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
+            .eq(4)
+            .click();
+        // This section covers the Share link and page content
+        cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']")
+            .eq(0)
+            .click();
+        cy.get("[class='v-list-item__title']")
+            .eq(0)
+            .should('have.text', "Share Page")
+            .click();
+        cy.get('[class="v-card__title text-h6 text-sm-h5"]')
+            .contains("Share with your Friends!")
+        cy.get('[class="v-card__text text-center"]')
+            .contains("Share with friends and family. Click the share button below.")
+        cy.get('[class="mx-auto text-center"]')
+            //.contains("Share Give")
+            .click()        
+    })
 
     it('Login and Confirm Account Tab: Profile and Advanced Settings', () => {
         cy.get("#menu-icon")
