@@ -1,16 +1,6 @@
 // ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
 
 Cypress.Commands.add('login', (email, password) => {
     cy.visit('login');
@@ -18,10 +8,9 @@ Cypress.Commands.add('login', (email, password) => {
     cy.get("#email").type(email);
     cy.get("[type='password']").type(password);
     cy.get("button[type='submit']").click();
-    cy.get("div[class='mb-4 mr-4 v-card v-sheet v-sheet--outlined theme--light'] div[class='v-card__title']").should($c_prices => {
-    console.log($c_prices.text());
-    expect($c_prices.text()).to.eq("Current Prices");
-    })
+    cy.get('[class="v-card__title"]')
+        .eq(1)
+        .should('have.text', "Current Prices")
 })
 
 Cypress.Commands.add('wordpresslogin', (email, password) => {
@@ -36,6 +25,13 @@ Cypress.Commands.add('prices_search', (product) => {
     cy.get("#input-124").type(product);
     cy.get('tbody > tr > :nth-child(2)').eq(0).should('have.text', product);
     cy.get("#input-124").clear();
+})
+
+Cypress.Commands.add('prices_coin', (product) => {
+    cy.get("#input-146").type(product);
+    cy.get('tbody > tr > :nth-child(2)').eq(0)
+        .should('have.text', product)
+        .click();
 })
 
 
