@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 describe('API testing', () => {
-    Cypress.config('baseUrl', "https://giveblockchain.io/")
+    Cypress.config('baseUrl', "https://giveblockchain.io/",)
     it('Get -- read -- giveblockchain.io', () => {
         cy.request('GET', '/').should((response) => {
             expect(response).to.have.property('status', 200)

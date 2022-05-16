@@ -212,17 +212,10 @@ describe('Sidebar Tests', () => {
             .should('have.text', "Nxt")
     })
 
-    it('Dogecoin coin page assertion', () => {
-        cy.prices_coin('Dogecoin')
-        cy.url().should('include', '/prices/DOGE')
+    it('ByteCoin coin page assertion', () => {
+        cy.prices_coin('ByteCoin')
+        cy.url().should('include', '/prices/BCN')
         cy.get('.offset-3 > .container > .row > :nth-child(2)')
-            .should('have.text', "Dogecoin")
-    })
-
-    it('Komodo coin page assertion', () => {
-        cy.prices_coin('Komodo')
-        cy.url().should('include', '/prices/KMD')
-        cy.get('.offset-3 > .container > .row > :nth-child(2)')
-            .should('have.text', "Komodo")
+            .should('have.text', "ByteCoin")
     })
 })
