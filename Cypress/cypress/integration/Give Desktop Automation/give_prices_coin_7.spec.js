@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('Sidebar Tests', () => {
+describe('Coin Tests', () => {
     beforeEach(() => {
         cy.login(Cypress.env('email'), Cypress.env('password'));
         cy.get('[type="button"]')
