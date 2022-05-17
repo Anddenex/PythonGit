@@ -149,9 +149,6 @@ describe('Login', () => {
             expect($cards.eq(3).trigger('mouseover'), "Humanitarian cards...")
                 .to.have.contain("We create meaningful cultural and service experiences for humanitarian participants, execute impactful and sustainable change for communities in need at home and around the world, and grant service scholarships for deserving families to ROAM with purpose.")
            
-                // .eq(0)
-            // .trigger('mouseover')
-            // .should('have.text', 'Our core mission provides a conduit for doing good around the globe by supporting the extraordinary individuals who give everything to their organizations and projects they have founded.')
         })
     })
 })
