@@ -10,14 +10,20 @@ describe('Sidebar Tests', () => {
       })
 
     it('ACT coin page assertion', () => {
-        cy.prices_coin('ACT')
+        cy.get("#input-146").type('ACT');
+        cy.get('tbody > tr > :nth-child(2)').eq(2)
+            .should('have.text', 'ACT')
+            .click();
         cy.url().should('include', '/prices/ACT')
         cy.get('.offset-3 > .container > .row > :nth-child(2)')
             .should('have.text', "ACT")
     })
 
     it('Decent coin page assertion', () => {
-        cy.prices_coin('Decent')
+        cy.get("#input-146").type('Decent');
+        cy.get('tbody > tr > :nth-child(2)').eq(1)
+            .should('have.text', 'Decent')
+            .click();
         cy.url().should('include', '/prices/DCT')
         cy.get('.offset-3 > .container > .row > :nth-child(2)')
             .should('have.text', "Decent")

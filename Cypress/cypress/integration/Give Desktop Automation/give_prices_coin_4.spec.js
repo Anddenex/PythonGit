@@ -94,7 +94,10 @@ describe('Sidebar Tests', () => {
     })
 
     it('Centra coin page assertion', () => {
-        cy.prices_coin('Centra')
+        cy.get("#input-146").type('Centra');
+        cy.get('tbody > tr > :nth-child(2)').eq(1)
+        .should('have.text', "Centra")
+        .click();
         cy.url().should('include', '/prices/CTR')
         cy.get('.offset-3 > .container > .row > :nth-child(2)')
             .should('have.text', "Centra")
@@ -178,7 +181,10 @@ describe('Sidebar Tests', () => {
     })
 
     it('Ink coin page assertion', () => {
-        cy.prices_coin('Ink')
+        cy.get("#input-146").type("Ink");
+        cy.get('tbody > tr > :nth-child(2)').eq(1)
+        .should('have.text', "Ink")
+        .click();
         cy.url().should('include', '/prices/INK')
         cy.get('.offset-3 > .container > .row > :nth-child(2)')
             .should('have.text', "Ink")
@@ -206,10 +212,13 @@ describe('Sidebar Tests', () => {
     })
 
     it('Groestlcoin coin page assertion', () => {
-        cy.prices_coin('Groestlcoin')
+        cy.get("#input-146").type('Groestlcoin');
+        cy.get('tbody > tr > :nth-child(2)').eq(0)
+        .contains('Groestlcoin')
+        .click();
         cy.url().should('include', '/prices/GRS')
         cy.get('.offset-3 > .container > .row > :nth-child(2)')
-            .should('have.text', "Groestlcoin")
+            .contains("Groestlcoin")
     })
 
     it('Quantum Resistant Ledger coin page assertion', () => {

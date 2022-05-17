@@ -171,7 +171,10 @@ describe('Sidebar Tests', () => {
     })
 
     it('Lykke coin page assertion', () => {
-        cy.prices_coin('Lykke')
+        cy.get("#input-146").type('Lykke');
+        cy.get('tbody > tr > :nth-child(2)').eq(0)
+            .should('have.text', 'Lykke')
+            .click();
         cy.url().should('include', '/prices/LKK')
         cy.get('.offset-3 > .container > .row > :nth-child(2)')
             .should('have.text', "Lykke")
