@@ -77,7 +77,7 @@ describe('Login', () => {
             expect($h4.eq(6), 'Fire Core Value Feature Compassion')
                 .to.have.contain("Compassion")
         })
-        //The core values features the selectors change everytime, so I can use those. The moment the site is refreshed the selector changes.
+        //The core values features the selectors change everytime, so I can't use those. The moment the site is refreshed the selector changes.
         //Will have to look at another way.
 
         // cy.wait(2000)
@@ -113,6 +113,45 @@ describe('Login', () => {
                 .to.have.contain("Do you have a cause we should support?")
             expect($title.eq(12), 'Support the cause title paragraph')
                 .to.have.contain("We invite all to submit a proposal for global causes where the Give community can make an impact.")
+        })
+    })
+
+    it('Expecting/Asserting Become a part of...', () => {
+        cy.get('[class="wpb_text_column wpb_content_element "]').should(($h4) => {
+            expect($h4.eq(9), "Become a part of the global movement.")
+                .to.have.contain("Become a part of the global movement.")
+            expect($h4.eq(10), "Even if you are unable...")
+                .to.have.contain("Even if you are unable to make a donation, we invite you to become a part of the Give Blockchain. Register now to learn how you can be a part of this important mission.")
+        })
+
+    })
+
+    it('Expecting/Asserting Causes We Support...', () => {
+        cy.get('h2').should(($h2) => {
+            expect($h2, "Causes we support...")
+                .to.have.contain("Causes We Support")
+        })
+        cy.get('h3').should(($h3) => {
+            expect($h3, "Do you have a cause we should support?")
+                .to.have.contain("Do you have a cause we should support?")
+        })
+        cy.get('[class="wpb_text_column wpb_content_element "]').should(($paragraph) => {
+            expect($paragraph.eq(12), "Do you have a cause paragraph.")
+                .to.have.contain("We invite all to submit a proposal for global causes where the Give community can make an impact.")
+            })
+        cy.get('[class="hover-content"]').should(($cards) => {
+            expect($cards.eq(0).trigger('mouseover'), "Givers cards...")
+                .to.have.contain('Our core mission provides a conduit for doing good around the globe by supporting the extraordinary individuals who give everything to their organizations and projects they have founded.')
+            expect($cards.eq(1).trigger('mouseover'), "Save cards...")
+                .to.have.contain("The global Give community is working with some of the world's top nonprofit foundations and charities to fight against human trafficking. We invite you to join us in our pursuit toward ending this evil scourge and human suffering.")
+            expect($cards.eq(2).trigger('mouseover'), "Water cards...")
+                .to.have.contain("More than 750,000,000 people worldwide do not have access to clean drinking water. Our community has aligned with resourceful leaders and innovative charities who are committed to provide access to clean water around the world.")
+            expect($cards.eq(3).trigger('mouseover'), "Humanitarian cards...")
+                .to.have.contain("We create meaningful cultural and service experiences for humanitarian participants, execute impactful and sustainable change for communities in need at home and around the world, and grant service scholarships for deserving families to ROAM with purpose.")
+           
+                // .eq(0)
+            // .trigger('mouseover')
+            // .should('have.text', 'Our core mission provides a conduit for doing good around the globe by supporting the extraordinary individuals who give everything to their organizations and projects they have founded.')
         })
     })
 })
