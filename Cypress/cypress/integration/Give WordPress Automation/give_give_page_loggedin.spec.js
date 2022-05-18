@@ -1,11 +1,10 @@
 /// <reference types="cypress" />
-// When a customer is logged out
+// When a customer is logged in
 describe('Login', () => {
     beforeEach(() => {
         cy.visit("https://giveblockchain.io/give/")
         cy.url()
             .should("include", "/give/")
-       // cy.percySnapshot()
         cy.get('h1').should(($h1) => {
             expect($h1, 'H1 Title').to.contain('Give')
             expect($h1, 'H1 Title').to.have.attr('style', "text-align: center")
