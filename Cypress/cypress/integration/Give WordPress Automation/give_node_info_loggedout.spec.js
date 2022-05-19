@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 // When a customer is logged in
-describe('Login', () => {
+describe('Give Node Info Page', () => {
     beforeEach(() => {
         cy.visit("https://giveblockchain.io/give-node-information/")
         cy.url()
