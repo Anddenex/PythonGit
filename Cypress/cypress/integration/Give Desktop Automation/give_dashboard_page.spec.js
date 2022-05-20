@@ -1,58 +1,91 @@
 /// <reference types="cypress" />
 
 describe('Login', () => {
-    it('Covering the Dashboard Page "My Balance"', () => {
+    beforeEach(() => {
         cy.visit("https://giveblockchain.io/login/");
         cy.get("#user_login").type(Cypress.env('email'));
         cy.get("#user_pass").type(Cypress.env('password'));
         cy.get("#wp-submit").click();
-        cy.get("div[class='vc_col-sm-3 wpb_column column_container vc_column_container col child_column centered-text padding-4-percent inherit_tablet inherit_phone instance-3 one-fourths clear-both'] div[class='wpb_wrapper'] div[class='wpb_wrapper']")
-            .contains("MY BALANCE");
-        cy.get("a[href='https://app.giveblockchain.io/inventory']").click();
+        cy.url()
+            .should("include", "/dashboard/")   
     })
 
-    it('Covering the Dashboard Page "My Licenses"', () => {
-        cy.visit("https://giveblockchain.io/login/");
-        cy.get("#user_login").type(Cypress.env('email'));
-        cy.get("#user_pass").type(Cypress.env('password'));
-        cy.get("#wp-submit").click();
-        cy.get("div[class='vc_col-sm-3 wpb_column column_container vc_column_container col child_column centered-text padding-4-percent inherit_tablet inherit_phone instance-4 one-fourths right-edge'] div[class='wpb_wrapper'] div[class='wpb_wrapper']")
-            .contains("MY LICENSES");
-        cy.get("a[href='https://app.giveblockchain.io/nodes']").click();
-    })
+    it('Expecting/Asserting all text on page', () => {
+        cy.get('h3').should(($h3) => {
+            expect($h3.eq(0), 'H3 First Title')
+                .to.contain("Notice")
+        }) 
 
-    it('Covering the Dashboard Page "My Vault"', () => {
-        cy.visit("https://giveblockchain.io/login/");
-        cy.get("#user_login").type(Cypress.env('email'));
-        cy.get("#user_pass").type(Cypress.env('password'));
-        cy.get("#wp-submit").click();
-        cy.get("div[class='vc_col-sm-3 wpb_column column_container vc_column_container col child_column centered-text padding-4-percent inherit_tablet inherit_phone instance-5 one-fourths clear-both'] div[class='wpb_wrapper'] div[class='wpb_wrapper']")
-            .contains("MY VAULT");
-        cy.get("a[href='https://app.giveblockchain.io/vault']").click();
-    })
+        cy.get('h6').should(($h6) => {
+            expect($h6.eq(0), 'First title text')
+                .to.contain("MY BALANCE")
+            expect($h6.eq(1), 'Second title text')
+                .to.contain("MY LICENSES")
+            expect($h6.eq(2), 'Third title text')
+                .to.contain("MY VAULT")
+            expect($h6.eq(3), 'Fourth title text')
+                .to.contain("SHARE GIVE")
+            expect($h6.eq(4), 'Fifth title text')
+                .to.contain("NODE (COMING SOON)")
+            expect($h6.eq(5), 'Sixth title text')
+                .to.contain("SMART NODE (COMING SOON)")
+            expect($h6.eq(6), 'Seventh title text')
+                .to.contain("DOWNLOAD NODE SOFTWARE")
+            expect($h6.eq(7), 'Eigth title text')
+                .to.contain("LET’S GIVE (UNDERGOING IMPROVEMENTS )")
+            expect($h6.eq(8), 'Ninth title text')
+                .to.contain("DOWNLOAD NODE SOFTWARE NOW")
+            expect($h6.eq(9), 'tenth title text')
+                .to.contain("SETUP VPS (COMING SOON)")    
+        }) 
 
-    it('Covering the Share Page "Share Give"', () => {
-        cy.visit("https://giveblockchain.io/login/");
-        cy.get("#user_login").type(Cypress.env('email'));
-        cy.get("#user_pass").type(Cypress.env('password'));
-        cy.get("#wp-submit").click();
-        cy.get("div[class='vc_col-sm-3 wpb_column column_container vc_column_container col child_column centered-text padding-4-percent inherit_tablet inherit_phone instance-6 one-fourths right-edge'] div[class='wpb_wrapper'] div[class='wpb_wrapper']")
-            .contains("SHARE GIVE");
-        // cy.get("a[href='https://app.giveblockchain.io/vault']").click(); ... Currently not working
+        cy.get('p').should(($para) => {
+            expect($para.eq(0), 'First paragraph text')
+                .to.contain("Your Node and Smart Node licenses will be available in your app in 30-180 days from purchase.")
+            expect($para.eq(1), 'Second paragraph text')
+                .to.contain("Download Give Node Software. Works with Give Node and Give Smart Node Licences.")            
+            expect($para.eq(2), 'Third paragraph text')
+                .to.contain("You must fill out the Terms and Conditions before installing any software.")                    
+        }) 
     })
-
-    it('Covering the text section', () => {
-        cy.visit("https://giveblockchain.io/login/");
-        cy.get("#user_login").type(Cypress.env('email'));
-        cy.get("#user_pass").type(Cypress.env('password'));
-        cy.get("#wp-submit").click();
-        cy.get("body > div:nth-child(14) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)")
-            .contains("Notice");
-        cy.get("body > div:nth-child(14) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > p:nth-child(1)")
-            .contains("Your Node and Smart Node licenses will be available in your app in 30-180 days from purchase.");
-        cy.get("body > div:nth-child(14) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > p:nth-child(1)")
-            .contains("Download Give Node Software. Works with Give Node and Give Smart Node Licences.");
-        cy.get("body > div:nth-child(14) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(7) > div:nth-child(1) > p:nth-child(1)")
-            .contains("You must fill out the Terms and Conditions before installing any software.");
+    it('Expecting/Asserting for all button clicks that are active', () => {
+        cy.get('[class="column-link"]')
+            .eq(0)
+            .click()
+        cy.url().should('include', "app.giveblockchain.io/inventory/")
+        cy.get('[class="v-card__title"]').should(($balances_title) =>  {
+            expect($balances_title.eq(0), 'First title text')
+                .to.contain("Balances")
+        })
+        cy.go('back')
+        cy.get('[class="column-link"]')
+            .eq(1)
+            .click()
+        cy.url().should('include', "app.giveblockchain.io/nodes/")
+        cy.get('[class="v-card__title text-capitalize"]').should(($node_title) =>  {
+            expect($node_title.eq(0), 'First title text')
+                .to.contain("give Node Info")
+        })
+        cy.go('back')
+        cy.get('[class="column-link"]')
+            .eq(2)
+            .click()
+        cy.url().should('include', "app.giveblockchain.io/vault/")
+        cy.get('[class="v-card__title"]')
+            .should('have.text', "Vault Items")
+        cy.go('back')
+        cy.get('[class="column-link"]')
+            .eq(3)
+            .click()
+        cy.url().should('include', "app.giveblockchain.io/social/")
+        cy.get('[class="v-card__title text-h6 text-sm-h5"]').should(($share_title) =>  {
+            expect($share_title.eq(0), 'First title text')
+                .to.contain("Share with your Friends!")
+        })
+        cy.go('back')
+        cy.get('[class="column-link"]')
+            .eq(4)
+            .click()
+        cy.url().should('include', "giveblockchain.io/dashboard/#download")
     })
 })
