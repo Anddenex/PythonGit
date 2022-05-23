@@ -20,41 +20,36 @@ describe('Login', () => {
         cy.get("[class='v-responsive__content']")
             .eq(0)
             .click();
-        cy.get(".v-card__text.justify-center.text-center")
-            .contains("Send BTC to your address:");
+        cy.get('[class="v-card__title pb-2"]')
+            .contains("BTC");
         cy.get("[data-cy='nav-inventory']")
             .click();
         cy.get("[class='v-responsive__content']")
             .eq(1)
             .click();
-        cy.get(".v-card__text.justify-center.text-center")
-            .contains("Send ETH to your address:");
+            cy.get('[class="v-card__title pb-2"]')
+            .contains("ETH");
         cy.get("[data-cy='nav-inventory']")
             .click()  
         cy.get("[class='v-responsive__content']")
             .eq(2)
             .click();           
-        cy.get(".v-card__text.justify-center.text-center")
-            .contains("Send GALA to your address:");
+        cy.get('[class="v-card__title pb-2"]')
+            .contains("GALA");
         cy.get("[data-cy='nav-inventory']")
             .click();
-        // cy.get("[class='v-responsive__content']")
-        //     .eq(3)
-        //     .click();
-        // cy.get(".v-card__text.justify-center.text-center").contains("Send GALVAN to your address:");
         cy.get("[data-cy='nav-inventory']")
             .click();
         cy.get("[class='v-responsive__content']")
             .eq(3)
             .click();
-        cy.get(".v-card__text.justify-center.text-center")
-            .contains("Send GREEN to your address:");
+        cy.get('[class="v-card__title pb-2"]')
+            .contains("GREEN");
         cy.get("[data-cy='nav-inventory']")
             .click();
         cy.get("[class='v-responsive__content']")
             .eq(4)
             .click();
-        // cy.get(".v-card__text.justify-center.text-center").contains("Send WIN to your address:");
         cy.get("[data-cy='nav-inventory']")
             .click();
     })

@@ -7,7 +7,7 @@ describe('Login', () => {
             .should("include", "/give/")
         cy.get('h1').should(($h1) => {
             expect($h1, 'H1 Title').to.contain('Give')
-            expect($h1, 'H1 Title').to.have.attr('style', "text-align: center")
+            expect($h1.eq(0), 'H1 Title').to.have.attr('style', "text-align: center")
           })    
     })
 
@@ -18,15 +18,6 @@ describe('Login', () => {
     })
 
     it('Confirming/Asserting the three sponsor cards', () => {
-        cy.get('[class="cell is-selected"]').should(($cell) => {
-            expect($cell.eq(0), 'Givers Sponsor')
-                .to.have.attr('style', "position: absolute; left: 0%; height: 400px;")
-            expect($cell.eq(1), 'Save Sponsor')
-                .to.have.attr('style', "position: absolute; left: 34.46%; height: 400px;")
-            expect($cell.eq(2), 'Water Sponsor')
-                .to.have.attr('style', "position: absolute; left: 68.92%; height: 400px;")
-            })   
-        
         cy.get('[class="nectar-fancy-box using-img "]').should(($necfancy) => {
             expect($necfancy.eq(0), 'Givers Sponsor')
                 .to.have.attr('style', "min-height: 400px")
@@ -164,7 +155,7 @@ describe('Login', () => {
 
     it('Confirming/Asserting the Save Card Link', () => {
         cy.get('[class="cell ')
-            .eq(0)
+            // .eq(3)
             .click()
         cy.url()
             .should('include', '/humanitarian/')

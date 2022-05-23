@@ -19,10 +19,11 @@ describe('Login', () => {
         cy.get(".v-card__text.pa-0.money").contains("$0.00");
     })
 
-    it('Next Level Mining Section', () => {
+    it('Next Level Rewards Section', () => {
         // Login to APP
         cy.login(Cypress.env('email'), Cypress.env('password'));
-        cy.get("div[class='row'] div div[class='v-card__title']").should('have.text', "Next. Level. Mining.");
+        cy.get("div[class='row'] div div[class='v-card__title']")
+            .should('have.text', "Next. Level. Rewards.");
 
         // This will be update once the button is wdirecting to the right page
 
@@ -55,7 +56,7 @@ describe('Login', () => {
 
         // Confirms View All Button
         cy.get("button[class='v-btn v-btn--block v-btn--contained v-btn--is-elevated v-btn--has-bg theme--light v-size--default brandPrimary white--text'] span[class='v-btn__content']").click();
-        cy.url().should("include", "prices");
+        cy.url().should("include", "/prices");
 
     })
 })

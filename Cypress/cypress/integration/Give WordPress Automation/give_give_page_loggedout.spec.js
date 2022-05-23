@@ -37,14 +37,6 @@ describe('Login', () => {
     })
 
     it('Confirming/Asserting the three sponsor cards', () => {
-        cy.get('[class="cell is-selected"]').should(($cell) => {
-            expect($cell.eq(0), 'Save Sponsor')
-                .to.have.attr('style', "position: absolute; left: 0%; height: 400px;")
-            expect($cell.eq(1), 'Water Sponsor')
-                .to.have.attr('style', "position: absolute; left: 34.46%; height: 400px;")
-            expect($cell.eq(2), 'Humanitarian Sponsor')
-                .to.have.attr('style', "position: absolute; left: 68.92%; height: 400px;")
-            })   
         
         cy.get('[class="nectar-fancy-box using-img "]').should(($necfancy) => {
             expect($necfancy.eq(0), 'Save Sponsor')

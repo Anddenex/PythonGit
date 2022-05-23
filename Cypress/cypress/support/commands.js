@@ -28,10 +28,19 @@ Cypress.Commands.add('prices_search', (product) => {
 })
 
 Cypress.Commands.add('prices_coin', (product) => {
-    cy.get("#input-146").type(product);
+    cy.get('[class="v-text-field__slot"]').type(product);
     cy.get('tbody > tr > :nth-child(2)').eq(0)
         .should('have.text', product)
         .click();
+})
+
+Cypress.Commands.add('login_coin_test', (email, password) => {  
+    cy.get("#email").type(email);
+    cy.get("[type='password']").type(password);
+    cy.get("button[type='submit']").click();
+    cy.get('[class="v-card__title"]')
+        .eq(1)
+        .should('have.text', "Current Prices")
 })
 
 
