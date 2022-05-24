@@ -16,9 +16,9 @@ Cypress.Commands.add('login', (email, password) => {
 Cypress.Commands.add('wordpresslogin', (email, password) => {
     cy.visit('https://giveblockchain.io/login');
     cy.url().should("include", "giveblockchain");   
-    cy.get("#email").type(email);
-    cy.get("[type='password']").type(password);
-    cy.get("button[type='submit']").click();
+    cy.get("#user_login").type(email);
+    cy.get("#user_pass").type(password);
+    cy.get("#wp-submit").click();
 })
 
 Cypress.Commands.add('prices_search', (product) => {
