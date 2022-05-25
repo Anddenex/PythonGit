@@ -45,7 +45,7 @@ describe('First 30 Coins Loop Assertion...', () => {
     })
 
     it('Fourth List of Coins Assertions....', () => {
-        let coin_names = ['SmartCash', 'Storj', 'PayPie', 'Metal', 'Centra', 'Time New Bank', 'Streamr DATAcoin', 'DigitalNote', 'Agoras Token', 'Horizen', 'CloakCoin', 'Metaverse', 'Asch', 'PeerCoin', 'SONM', 'Enjin Coin', 'Emercoin', 'SingularDTV', 'Aragon', 'Trigger', 'Groestlcoin', 'Quantum Resistant Ledger', 'Bread token', 'Kin', 'Wings DAO', 'Quantstamp', 'Wagerr', 'Storm', 'Loopring', 'ViaCoin', 'XTRABYTES', 'Cofound.it', 'MobileGo', 'SuperNET', 'Delphy', 'Humaniq', 'FirstBlood', 'ATMChain', 'Pura', 'Neblio', 'iEx.ec', 'Ambrosus', 'LBRY Credits', 'Tael', 'EthLend', 'Experience Points', 'SaluS', 'CounterParty', 'Eidoo', 'Viberate', 'The Hempcoin', 'CyberMiles', 'Cindicator', 'SibCoin', 'ZClassic', 'Pillar', 'Pepe Cash', 'Melon', 'FeatherCoin', 'WhiteCoin', 'BlackCoin', 'PotCoin', 'Shifdistrict0xt', 'Guppy', 'Gulden', 'Yoyow', 'IoT Chain', 'Cobinhood', 'Po.et', 'Modum'];
+        let coin_names = ['SmartCash', 'Storj', 'PayPie', 'Metal', 'Time New Bank', 'Streamr DATAcoin', 'DigitalNote', 'Agoras Token', 'Horizen', 'CloakCoin', 'Metaverse', 'Asch', 'PeerCoin', 'SONM', 'Enjin Coin', 'Emercoin', 'SingularDTV', 'Aragon', 'Trigger', 'Groestlcoin', 'Quantum Resistant Ledger', 'Bread token', 'Kin', 'Wings DAO', 'Quantstamp', 'Wagerr', 'Storm', 'Loopring', 'ViaCoin', 'XTRABYTES', 'Cofound.it', 'MobileGo', 'SuperNET', 'Delphy', 'Humaniq', 'FirstBlood', 'ATMChain', 'Pura', 'Neblio', 'iEx.ec', 'Ambrosus', 'LBRY Credits', 'Tael', 'EthLend', 'Experience Points', 'SaluS', 'CounterParty', 'Eidoo', 'Viberate', 'The Hempcoin', 'CyberMiles', 'Cindicator', 'SibCoin', 'ZClassic', 'Pillar', 'Pepe Cash', 'Melon', 'FeatherCoin', 'WhiteCoin', 'BlackCoin', 'PotCoin', 'Shifdistrict0xt', 'Guppy', 'Gulden', 'Yoyow', 'IoT Chain', 'Cobinhood', 'Po.et', 'Modum'];
         for (var j = 0; j < coin_names.length; j++) {
             let name = coin_names[j];
             cy.log('Current Coin being tested', name);
@@ -57,7 +57,7 @@ describe('First 30 Coins Loop Assertion...', () => {
     })
 
     it('Fifth List of Coins Assertions....', () => {
-        let coin_names = ['Open Trading Network', 'Mercury', 'Lykke', 'Monetha', 'Tierion', 'Namecoin', 'AirSwap', 'FairCoin', 'BLOCKv', 'Ionomy', 'EmberCoin', 'Blox', 'AEON', 'IOCoin', 'MinexCoin', 'TrustCoin', 'Crown Coin', 'bitCNY', 'Token as a Service', 'Elastic', 'MonetaryUnit', 'Expanse', 'HyperSpace', 'Simple Token', 'Swarm City Token', 'Nuls'];
+        let coin_names = ['Open Trading Network', 'Mercury', 'Monetha', 'Tierion', 'Namecoin', 'AirSwap', 'FairCoin', 'BLOCKv', 'Ionomy', 'EmberCoin', 'Blox', 'AEON', 'IOCoin', 'MinexCoin', 'TrustCoin', 'Crown Coin', 'bitCNY', 'Token as a Service', 'Elastic', 'MonetaryUnit', 'Expanse', 'HyperSpace', 'Simple Token', 'Swarm City Token', 'Nuls'];
         for (var j = 0; j < coin_names.length; j++) {
             let name = coin_names[j];
             cy.log('Current Coin being tested', name);
