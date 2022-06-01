@@ -148,7 +148,7 @@ describe('Sign up and Log In Page', () => {
         cy.wait(1000)
 
         cy.get('[class="nectar-post-grid-link"]').eq(2).click()
-        cy.url().should('include', '/10558-2/')
+        cy.url().should('include', '/wendy/')
         cy.get('h1').should('have.text', 'Wendy')
         cy.go('back')
         cy.get('[data-filter="humanitarian"]').click()

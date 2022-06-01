@@ -737,4 +737,39 @@ describe('API testing', () => {
             expect(response.body).to.not.be.null
         })
     })
+
+    it('Get -- read -- /humanitarian-donate/', () => {
+        cy.request('GET', '/humanitarian-donate/').should((response) => {
+            expect(response).to.have.property('status', 200)
+            expect(response.body).to.not.be.null
+        })
+    })
+
+    it('Get -- read -- /water-donate/', () => {
+        cy.request('GET', '/water-donate/').should((response) => {
+            expect(response).to.have.property('status', 200)
+            expect(response.body).to.not.be.null
+        })
+    })
+
+    it('Get -- read -- /save-donate/', () => {
+        cy.request('GET', '/save-donate/').should((response) => {
+            expect(response).to.have.property('status', 200)
+            expect(response.body).to.not.be.null
+        })
+    })
+
+    it('Get -- read -- /humanitarian-payment/', () => {
+        cy.request('GET', '/humanitarian-payment/').should((response) => {
+            expect(response).to.have.property('status', 200)
+            expect(response.body).to.not.be.null
+        })
+    })
+
+    it('Get -- read -- /save-payment/', () => {
+        cy.request('GET', '/save-payment/').should((response) => {
+            expect(response).to.have.property('status', 200)
+            expect(response.body).to.not.be.null
+        })
+    })
 })
