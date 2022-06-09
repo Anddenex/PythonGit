@@ -6,6 +6,8 @@
     "cy:run:firefox": "cypress run --browser firefox"
   },
   "devDependencies": {
+    "@percy/cli": "^1.3.0",
+    "@percy/cypress": "^3.1.1",
     "cypress": "^10.0.0"
   }
 }
