@@ -11,7 +11,6 @@ describe('Login', () => {
     })
 
     it('Expecting/Asserting text for button accurate', () => {
-        //cy.percySnapshot()
         cy.get('[class="nectar-button jumbo see-through accent-color"]').should(($necton) => {
             //expect($necton).to.have.length(3)
             expect($necton.eq(0), 'first button').to.contain('Give')
@@ -31,7 +30,6 @@ describe('Login', () => {
             .click()
         cy.url()
             .should("include", "/give-information/")
-       // cy.percySnapshot()
         cy.get('h1').should(($h1) => {
             expect($h1, 'H1 Title').to.contain('Give')
             expect($h1, 'H1 Title').to.have.attr('style', "text-align: center")
@@ -47,7 +45,6 @@ describe('Login', () => {
             .click()
         cy.url()
             .should("include", "/mission-information/")
-        //cy.percySnapshot()
         cy.get('h1').should(($h1) => {
             expect($h1, 'H1 Title').to.contain('We Can Make a Change')
           })    
@@ -62,7 +59,6 @@ describe('Login', () => {
             .click()
         cy.url()
             .should("include", "/give-node-information/")
-        //cy.percySnapshot()
         cy.get('h4').should(($h4) => {
             expect($h4, 'H4 Title').to.contain('Login to make purchases and give.')
             expect($h4, 'style assert').to.have.attr('style', "text-align: center;")
@@ -78,7 +74,6 @@ describe('Login', () => {
             .click()
         cy.url()
             .should("include", "/lets-give/")
-        //cy.percySnapshot()
         cy.get('h5').should(($h5) => {
             expect($h5, 'H5 Title').to.contain("Join The Movement")
           })    
@@ -93,7 +88,6 @@ describe('Login', () => {
             .click()
         cy.url()
             .should("include", "/login/")
-        //cy.percySnapshot()
         cy.get('h5').should(($h5) => {
             expect($h5, 'H5 Title').to.contain("Login to access your account:")
           })    
