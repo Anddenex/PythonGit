@@ -33,7 +33,7 @@ describe('Login', () => {
         cy.get('h1').should(($h1) => {
             expect($h1, 'H1 Title').to.contain('Give')
             expect($h1, 'H1 Title').to.have.attr('style', "text-align: center")
-          })    
+        })    
     })
 
     it('Covering the Mission button', () => {
@@ -47,7 +47,7 @@ describe('Login', () => {
             .should("include", "/mission-information/")
         cy.get('h1').should(($h1) => {
             expect($h1, 'H1 Title').to.contain('We Can Make a Change')
-          })    
+        })    
     })
 
     it('Covering the Blockchain button', () => {
@@ -62,7 +62,7 @@ describe('Login', () => {
         cy.get('h4').should(($h4) => {
             expect($h4, 'H4 Title').to.contain('Login to make purchases and give.')
             expect($h4, 'style assert').to.have.attr('style', "text-align: center;")
-          })    
+        })    
     })
 
     it('Covering the Sign Up Free button', () => {
@@ -76,7 +76,7 @@ describe('Login', () => {
             .should("include", "/lets-give/")
         cy.get('h5').should(($h5) => {
             expect($h5, 'H5 Title').to.contain("Join The Movement")
-          })    
+        })    
     })
 
     it('Covering the Login button', () => {
@@ -90,6 +90,6 @@ describe('Login', () => {
             .should("include", "/login/")
         cy.get('h5').should(($h5) => {
             expect($h5, 'H5 Title').to.contain("Login to access your account:")
-          })    
+        })    
     })
 })
