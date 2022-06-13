@@ -3,7 +3,7 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   env: {
     email: 'aexon@nerdsunite.me',
-    password: 'IAmThe#1Nerd!',
+    password: 'NerdUniteIsThe#1Nerd!',
     wallet: 'Sm!leTestingFlyfisher*1',
     phrase: 'pudding, nut, into, draw, give, boost, lens, token, orphan, scout, error, enjoy',
     newemail: 'aexonnerdsunited.test1@gmail.com',

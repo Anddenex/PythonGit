@@ -57,7 +57,7 @@ describe('Login', () => {
                 .to.have.contain("LEARN MORE")
             expect($hover.eq(3).trigger('mouseover'), 'Humanitarian Sponsor')
                 .to.have.contain("LEARN MORE")          
-            })
+        })
     })
 
     it("Confirming/Asserting Can't Decide...", () => {
