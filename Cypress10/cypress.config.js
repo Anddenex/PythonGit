@@ -8,7 +8,7 @@ module.exports = defineConfig({
     phrase: 'pudding, nut, into, draw, give, boost, lens, token, orphan, scout, error, enjoy',
     newemail: 'aexonnerdsunited.test1@gmail.com',
     newpassword: 'PieceofPie1#More',
-    greenemail: 'aexonnerdsunited@gmail.com',
+    galvanemail: 'aexonnerdsunited@gmail.com',
     first_name: 'Andrew',
     last_name: 'Exon',
     confirm_password: 'PieceofPie1#More'
