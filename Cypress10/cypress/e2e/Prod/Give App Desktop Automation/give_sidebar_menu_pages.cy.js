@@ -190,7 +190,7 @@ describe('Sidebar Tests', () => {
             .contains("Change Your Encryption Password")
         cy.get("#input-234")
             //.contains("App Backup Phrase")
-            .type(Cypress.env('phrase'))
+            .type(Cypress.env('prod_give_phrase'))
         cy.get("#input-239")
             .click()
             .type(Cypress.env('wallet'))
