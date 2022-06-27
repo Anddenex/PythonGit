@@ -71,3 +71,20 @@ def month_choice():
 
 
 month_choice()
+
+# A program to convert a string of Unicode numbers into a Gibberish string of text
+
+def gibberish():
+    print('A program to convert a string of Unicode numbers into a Gibberish string of text:')
+
+    inString = input("Please enter a random set of Unicode numbers: ")
+
+    message = " "
+    for numStr in inString.split():
+        codeNum = eval(numStr)
+        message = message + chr(codeNum)
+
+    print(f"The decoded gibberish message is: {message}")
+
+
+gibberish()
