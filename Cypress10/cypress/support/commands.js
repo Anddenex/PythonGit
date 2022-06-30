@@ -7,19 +7,28 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-//
-//
+import cypressCommands from "../e2e/App_Page_Objects/Cypress_Command"
+
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
 Cypress.Commands.add('login', (email, password) => {
-    cy.visit('login');
+    cypressCommands.openApp();
     cy.url().should("include", "giveblockchain");   
-    cy.get("#email").type(email);
-    cy.get("[type='password']").type(password);
+    cypressCommands.getuserEmail().type(email);
+    cypressCommands.getuserPassword().type(password);
     cy.get("button[type='submit']").click();
     cy.get('[class="v-card__title"]')
         .eq(1)
         .should('have.text', "Current Prices")
+})
+
+Cypress.Commands.add('wplogin', (email, password) => {
+    cypressCommands.openWP();
+    cy.url().should("include", "giveblockchain");   
+    cypressCommands.getuserEmail().type(email);
+    cypressCommands.getuserPassword().type(password);
+    cypressCommands.getsubmitButton().click();
+    cy.url().should("include", "/dashboard/")  
 })
 
 Cypress.Commands.add('wordpresslogin', (email, password) => {
@@ -31,6 +40,12 @@ Cypress.Commands.add('wordpresslogin', (email, password) => {
     cy.url().should("include", "/dashboard/")  
 })
 
+Cypress.Commands.add('app_prices_search', (product) => {
+    cypressCommands.getCryptoProduct().type(product);
+    cypressCommands.getProductText().eq(0).should('have.text', product);
+    cypressCommands.getCryptoProduct().clear();
+})
+
 Cypress.Commands.add('prices_search', (product) => {
     cy.get("#input-124").type(product);
     cy.get('tbody > tr > :nth-child(2)').eq(0).should('have.text', product);
@@ -38,15 +53,39 @@ Cypress.Commands.add('prices_search', (product) => {
 })
 
 Cypress.Commands.add('prices_search_mobile', (product) => {
+    cypressCommands.getCryptoProduct().type(product);
+    cypressCommands.getProductText().eq(0).should('have.text', "Currency"+product);
+    cypressCommands.getCryptoProduct().clear();
+})
+
+Cypress.Commands.add('prices_search_mobile', (product) => {
     cy.get("#input-124").type(product);
-    cy.get('tbody > tr > :nth-child(2)').eq(0).should('have.text', "Currency"+product);
+    cy.get('tbody > tr > :nth-child(2)')
+        .eq(0)
+        .should('have.text', "Currency"+product);
     cy.get("#input-124").clear();
+})
+
+Cypress.Commands.add('prices_coin', (product) => {
+    cypressCommands.getCoinProduct().type(product);
+    cypressCommands.getProductText()
+        .eq(0)
+        .should('have.text', product)
+        .click();
 })
 
 Cypress.Commands.add('prices_coin', (product) => {
     cy.get('[class="v-text-field__slot"]').type(product);
     cy.get('tbody > tr > :nth-child(2)').eq(0)
         .should('have.text', product)
+        .click();
+})
+
+Cypress.Commands.add('prices_coin_mobile', (product) => {
+    cypressCommands.getCoinProduct().type(product);
+    cypressCommands.getProductText()
+        .eq(0)
+        .should('have.text', "Currency"+product)
         .click();
 })
 

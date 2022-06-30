@@ -2,11 +2,7 @@
 
 describe('/', () => {
     beforeEach(() => {
-        cy.visit('/');
-        cy.url().should("include", "giveblockchain");
-        cy.get("#email").type(Cypress.env('email'));
-        cy.get("[type='password']").type(Cypress.env('password'));
-        cy.get("button[type='submit']").click();
+        cy.login(Cypress.env('email'), Cypress.env('password'));
     })
 
     it('Summary page to confirm "all" text: ', () => {
