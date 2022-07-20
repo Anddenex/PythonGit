@@ -5,6 +5,7 @@ import recurrentElements from "../../App_Page_Objects/Ubiquitous_Elements"
 describe('Sidebar Tests', () => {
     beforeEach(() => {
         sidebarMenu.getapplogin();
+        // cy.login(Cypress.env('email'), Cypress.env('password'));
         cy.wait(500)   
       })
 

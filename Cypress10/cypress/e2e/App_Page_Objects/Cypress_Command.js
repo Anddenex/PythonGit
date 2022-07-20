@@ -27,6 +27,18 @@ class cypressCommands {
     getAppTitle() {
         return cy.get('[class="v-card__title"]')
     }
+
+    getCryptoProduct() {
+        return cy.get("#input-124")
+    }
+
+    getProductText() {
+        return cy.get('tbody > tr > :nth-child(2)')
+    }
+
+    getCoinProduct() {
+        return cy.get('[class="v-text-field__slot"]')
+    }
 }
 
 export default new cypressCommands() 
