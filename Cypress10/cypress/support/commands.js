@@ -141,6 +141,16 @@ Cypress.Commands.add('create_account', (first_name, last_name, email, newpasswor
         .contains("Sign Up");
 })
 
+Cypress.Commands.add('recoverPassPhrase', (recoveryValue) => {
+    let rValue = document.getElementsByTagName('value')[0].innerHTML;
+    
+    cy.get("#input-124").type(product);
+    cy.get('tbody > tr > :nth-child(2)')
+        .eq(0)
+        .should('have.text', "Currency"+product);
+    cy.get("#input-124").clear();
+})
+
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //
