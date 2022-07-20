@@ -1,4 +1,9 @@
 {
-  "email": "aexon@nerdsunite.me",
-  "password": "IAmThe#1Nerd!"
+  "email": {
+    "main": "aexon@nerdsunite.me"
+  },
+  "password": "IAmThe#1Nerd!",
+  "users": {
+    "user1": "aexon@nerdunited.com"
+  }
 }

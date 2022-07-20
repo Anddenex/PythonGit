@@ -86,6 +86,7 @@ describe('New Core Practice', function () {
 
         cy.get('[type="submit"]').click()
         cy.get('[class="button"]').contains("Yes, I'm Sure").click()
+
         cy.get('@value1').then(response => {
             cy.get('[class="input"]').eq(0).type(response)
         });

@@ -7,7 +7,8 @@ describe('First 30 Coins Loop Assertion...', () => {
             .eq(2)
             .click()
         cy.wait(1000)
-      })
+    })
+
     it('First List of Coins Assertions....', () => {
         let coin_names = ['Bitcoin', 'Ethereum', 'XRP', 'Bitcoin Cash', 'Litecoin', 'Cardano', 'Gala', 'IOTA', 'Dash', 'NEM', 'Monero', 'EOS', 'Bitcoin Gold', 'NEO', 'QTUM', 'Stellar', 'Ethereum Classic', 'Lisk', 'TRON', 'Verge', 'ICON Project', 'ZCash', 'Ardor', 'OmiseGo', 'Bitshares', 'Tether', 'Populous', 'Waves', 'Nxt', 'ByteCoin', 'Dogecoin', 'Komodo'];
         for (var j = 0; j < coin_names.length; j++) {
@@ -16,7 +17,8 @@ describe('First 30 Coins Loop Assertion...', () => {
             cy.prices_coin(name)
             cy.get('.offset-3 > .container > .row > :nth-child(2)')
                 .should('have.text', name)
-            cy.go('back')
+            cy.get('[type="button"]').click()
+            // cy.go('back')
         }
     })
 
