@@ -4,3 +4,4 @@ Cypress10/node_modules
 Cypress10/cypress/videos
 Cypress10/cypress/screenshots
 Cypress10/cypress/fixtures/userData.json
+../.vscode/
