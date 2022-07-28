@@ -7,149 +7,144 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-import cypressCommands from "../e2e/App_Page_Objects/Cypress_Command"
+import CypressCommands from '../e2e/App_Page_Objects/Cypress_Command';
 
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
 Cypress.Commands.add('login', (email, password) => {
-    cypressCommands.openApp();
-    cy.url().should("include", "giveblockchain");   
-    cypressCommands.getuserEmail().type(email);
-    cypressCommands.getuserPassword().type(password);
-    cy.get("button[type='submit']").click();
-    cy.get('[class="v-card__title"]')
-        .eq(1)
-        .should('have.text', "Current Prices")
-})
+  CypressCommands.openApp();
+  cy.url().should('include', 'giveblockchain');
+  CypressCommands.getuserEmail().type(email);
+  CypressCommands.getuserPassword().type(password);
+  cy.get("button[type='submit']").click();
+  cy.get('[class="v-card__title"]').eq(1).should('have.text', 'Current Prices');
+});
 
 Cypress.Commands.add('wplogin', (email, password) => {
-    cypressCommands.openWP();
-    cy.url().should("include", "giveblockchain");   
-    cypressCommands.getuserEmail().type(email);
-    cypressCommands.getuserPassword().type(password);
-    cypressCommands.getsubmitButton().click();
-    cy.url().should("include", "/dashboard/")  
-})
+  CypressCommands.openWP();
+  cy.url().should('include', 'giveblockchain');
+  CypressCommands.getuserEmail().type(email);
+  CypressCommands.getuserPassword().type(password);
+  CypressCommands.getsubmitButton().click();
+  cy.url().should('include', '/dashboard/');
+});
 
 Cypress.Commands.add('wordpresslogin', (email, password) => {
-    cy.visit('https://giveblockchain.io/login');
-    cy.url().should("include", "giveblockchain");   
-    cy.get("#user_login").type(email);
-    cy.get("#user_pass").type(password);
-    cy.get("#wp-submit").click();
-    cy.url().should("include", "/dashboard/")  
-})
+  cy.visit('https://giveblockchain.io/login');
+  cy.url().should('include', 'giveblockchain');
+  cy.get('#user_login').type(email);
+  cy.get('#user_pass').type(password);
+  cy.get('#wp-submit').click();
+  cy.url().should('include', '/dashboard/');
+});
 
 Cypress.Commands.add('app_prices_search', (product) => {
-    cypressCommands.getCryptoProduct().type(product);
-    cypressCommands.getProductText().eq(0).should('have.text', product);
-    cypressCommands.getCryptoProduct().clear();
-})
+  CypressCommands.getCryptoProduct().type(product);
+  CypressCommands.getProductText().eq(0).should('have.text', product);
+  CypressCommands.getCryptoProduct().clear();
+});
 
 Cypress.Commands.add('prices_search', (product) => {
-    cy.get("#input-124").type(product);
-    cy.get('tbody > tr > :nth-child(2)').eq(0).should('have.text', product);
-    cy.get("#input-124").clear();
-})
+  cy.get('#input-124').type(product);
+  cy.get('tbody > tr > :nth-child(2)').eq(0).should('have.text', product);
+  cy.get('#input-124').clear();
+});
 
 Cypress.Commands.add('prices_search_mobile', (product) => {
-    cypressCommands.getCryptoProduct().type(product);
-    cypressCommands.getProductText().eq(0).should('have.text', "Currency"+product);
-    cypressCommands.getCryptoProduct().clear();
-})
+  CypressCommands.getCryptoProduct().type(product);
+  CypressCommands.getProductText()
+    .eq(0)
+    .should('have.text', `Currency, ${product}`);
+  CypressCommands.getCryptoProduct().clear();
+});
 
 Cypress.Commands.add('prices_search_mobile', (product) => {
-    cy.get("#input-124").type(product);
-    cy.get('tbody > tr > :nth-child(2)')
-        .eq(0)
-        .should('have.text', "Currency"+product);
-    cy.get("#input-124").clear();
-})
+  cy.get('#input-124').type(product);
+  cy.get('tbody > tr > :nth-child(2)')
+    .eq(0)
+    .should('have.text', `Currency, ${product}`);
+  cy.get('#input-124').clear();
+});
 
 Cypress.Commands.add('prices_coin', (product) => {
-    cypressCommands.getCoinProduct().type(product);
-    cypressCommands.getProductText()
-        .eq(0)
-        .should('have.text', product)
-        .click();
-})
+  CypressCommands.getCoinProduct().type(product);
+  CypressCommands.getProductText().eq(0).should('have.text', product).click();
+});
 
 Cypress.Commands.add('prices_coin', (product) => {
-    cy.get('[class="v-text-field__slot"]').type(product);
-    cy.get('tbody > tr > :nth-child(2)').eq(0)
-        .should('have.text', product)
-        .click();
-})
+  cy.get('[class="v-text-field__slot"]').type(product);
+  cy.get('tbody > tr > :nth-child(2)')
+    .eq(0)
+    .should('have.text', product)
+    .click();
+});
 
 Cypress.Commands.add('prices_coin_mobile', (product) => {
-    cypressCommands.getCoinProduct().type(product);
-    cypressCommands.getProductText()
-        .eq(0)
-        .should('have.text', "Currency"+product)
-        .click();
-})
+  CypressCommands.getCoinProduct().type(product);
+  CypressCommands.getProductText()
+    .eq(0)
+    .should('have.text', `Currency, ${product}`)
+    .click();
+});
 
 Cypress.Commands.add('prices_coin_mobile', (product) => {
-    cy.get('[class="v-text-field__slot"]').type(product);
-    cy.get('tbody > tr > :nth-child(2)').eq(0)
-        .should('have.text', "Currency"+product)
-        .click();
-})
+  cy.get('[class="v-text-field__slot"]').type(product);
+  cy.get('tbody > tr > :nth-child(2)')
+    .eq(0)
+    .should('have.text', `Currency, ${product}`)
+    .click();
+});
 
-Cypress.Commands.add('login_coin_test', (email, password) => {  
-    cy.get("#email").type(email);
-    cy.get("[type='password']").type(password);
-    cy.get("button[type='submit']").click();
-    cy.get('[class="v-card__title"]')
-        .eq(1)
-        .should('have.text', "Current Prices")
-})
+Cypress.Commands.add('login_coin_test', (email, password) => {
+  cy.get('#email').type(email);
+  cy.get("[type='password']").type(password);
+  cy.get("button[type='submit']").click();
+  cy.get('[class="v-card__title"]').eq(1).should('have.text', 'Current Prices');
+});
 
-Cypress.Commands.add('create_account', (first_name, last_name, email, newpassword, confirm_password) => {  
-    cy.visit("https://giveblockchain.io/lets-give/");
-    cy.get("h5")
-        .should('have.text', "Join The Movement");
-        cy.get("#user_first_name1")
-        .click()
-        .type(first_name)
-        .should('have.value', first_name);
-    cy.get("#user_last_name1")
-        .click()
-        .type(last_name)
-        .should('have.value', last_name);
-    cy.get("#user_email1")
-        .click()
-        .type(email)
-        .should('have.value', email);
-    cy.get("#mepr_user_password1")
-        .click()
-        .type(newpassword)
-        .should('have.value', newpassword);
-    cy.get("#mepr_user_password_confirm1")
-        .click()
-        .type(confirm_password)
-        .should('have.value', confirm_password);
-    cy.get(".mepr_password > div.mp-hide-pw > .button > .dashicons")
-        .click()
-    cy.get(".mepr_password_confirm > div.mp-hide-pw > .button > .dashicons")
-        .click();
-    cy.get("#mepr_agree_to_privacy_policy1")
-        .click()
-        .check({ force: true })
-        .should('be.checked');
-    cy.get(".mepr-submit")
-        .contains("Sign Up");
-})
+Cypress.Commands.add(
+  'create_account',
+  (firstName, lastName, email, newPassword, confirmPassword) => {
+    cy.visit('https://giveblockchain.io/lets-give/');
+    cy.get('h5').should('have.text', 'Join The Movement');
+    cy.get('#user_firstName1')
+      .click()
+      .type(firstName)
+      .should('have.value', firstName);
+    cy.get('#user_lastName1')
+      .click()
+      .type(lastName)
+      .should('have.value', lastName);
+    cy.get('#user_email1').click().type(email).should('have.value', email);
+    cy.get('#mepr_user_password1')
+      .click()
+      .type(newPassword)
+      .should('have.value', newPassword);
+    cy.get('#mepr_user_password_confirm1')
+      .click()
+      .type(confirmPassword)
+      .should('have.value', confirmPassword);
+    cy.get('.mepr_password > div.mp-hide-pw > .button > .dashicons').click();
+    cy.get(
+      '.mepr_password_confirm > div.mp-hide-pw > .button > .dashicons'
+    ).click();
+    cy.get('#mepr_agree_to_privacy_policy1')
+      .click()
+      .check({ force: true })
+      .should('be.checked');
+    cy.get('.mepr-submit').contains('Sign Up');
+  }
+);
 
-Cypress.Commands.add('recoverPassPhrase', (recoveryValue) => {
-    let rValue = document.getElementsByTagName('value')[0].innerHTML;
-    
-    cy.get("#input-124").type(product);
-    cy.get('tbody > tr > :nth-child(2)')
-        .eq(0)
-        .should('have.text', "Currency"+product);
-    cy.get("#input-124").clear();
-})
+// Cypress.Commands.add('recoverPassPhrase', (recoveryValue) => {
+//   let rValue = document.getElementsByTagName('value')[0].innerHTML;
+
+//   cy.get('#input-124').type(product);
+//   cy.get('tbody > tr > :nth-child(2)')
+//     .eq(0)
+//     .should('have.text', `Currency, ${product}`);
+//   cy.get('#input-124').clear();
+// });
 
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })

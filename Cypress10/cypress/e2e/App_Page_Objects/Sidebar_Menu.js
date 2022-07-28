@@ -1,131 +1,133 @@
-class sidebarMenu {
-    getapplogin() {
-        cy.login(Cypress.env('email'), Cypress.env('password'));
-    }
+class SidebarMenu {
+  getapplogin() {
+    cy.login(Cypress.env('email'), Cypress.env('password'));
+  }
 
-    getProfileButton() {
-        return cy.get('#menu-icon');
-    }
+  getProfileButton() {
+    return cy.get('#menu-icon');
+  }
 
-    getsidebar_nav() {
-        return cy.get("[class='v-icon notranslate mdi mdi-chevron-down theme--light']");
-    }
+  getsidebar_nav() {
+    return cy.get(
+      "[class='v-icon notranslate mdi mdi-chevron-down theme--light']"
+    );
+  }
 
-    getsubmenu_nav() {
-        return cy.get("[class='v-list-item__title']");
-    }
+  getsubmenu_nav() {
+    return cy.get("[class='v-list-item__title']");
+  }
 
-    getshare_text() {
-        return cy.get('[class="v-card__text text-center"]')
-    }
+  getshare_text() {
+    return cy.get('[class="v-card__text text-center"]');
+  }
 
-    getShareButton() {
-        return cy.get('[class="v-btn__content"]')
-    }
+  getShareButton() {
+    return cy.get('[class="v-btn__content"]');
+  }
 
-    getsidebarProfileHeading() {
-        return cy.get('[class="ui-heading"]')
-    }
+  getsidebarProfileHeading() {
+    return cy.get('[class="ui-heading"]');
+  }
 
-    getsidebarFormLabel() {
-        return cy.get('[class="field-label"]')
-    }
+  getsidebarFormLabel() {
+    return cy.get('[class="field-label"]');
+  }
 
-    getsidebarPhoneLabel() {
-        return cy.get('[class="phone-label"]')
-    }
+  getsidebarPhoneLabel() {
+    return cy.get('[class="phone-label"]');
+  }
 
-    getsidebarNameLabel() {
-        return cy.get('[class="ui-input"]')
-    }
+  getsidebarNameLabel() {
+    return cy.get('[class="ui-input"]');
+  }
 
-    getsidebarButtonTitle() {
-        return cy.get('[class="button-title"]')
-    }
+  getsidebarButtonTitle() {
+    return cy.get('[class="button-title"]');
+  }
 
-    getsidebardButtonClick() {
-        return cy.get(".v-toolbar__content > .v-btn > .v-btn__content > .v-icon")
-    }
+  getsidebardButtonClick() {
+    return cy.get('.v-toolbar__content > .v-btn > .v-btn__content > .v-icon');
+  }
 
-    getAdvancedSettingsTitle() {
-        return cy.get('[class="v-card__title heading"]')
-    }
+  getAdvancedSettingsTitle() {
+    return cy.get('[class="v-card__title heading"]');
+  }
 
-    getWalletPhrase() {
-        return cy.get('[class="v-text-field__slot"]')
-    }
-    
-    getPKey() {
-        return cy.get('#pkey')
-    }
+  getWalletPhrase() {
+    return cy.get('[class="v-text-field__slot"]');
+  }
 
-    getVIcon() {
-        return cy.get('[class="v-icon notranslate material-icons theme--dark"]')
-    }
+  getPKey() {
+    return cy.get('#pkey');
+  }
 
-    getTwoFactorTitle() {
-        return cy.get('.v-stepper__header')
-    }
+  getVIcon() {
+    return cy.get('[class="v-icon notranslate material-icons theme--dark"]');
+  }
 
-    getSubHeader() {
-        return cy.get('.v-stepper__step--active > .v-stepper__label')
-    }
+  getTwoFactorTitle() {
+    return cy.get('.v-stepper__header');
+  }
 
-    getInstallText() {
-        return cy.get(':nth-child(3) > .v-stepper__wrapper > p')
-    }
+  getSubHeader() {
+    return cy.get('.v-stepper__step--active > .v-stepper__label');
+  }
 
-    getSubheader2() {
-        return cy.get(":nth-child(4) > .v-stepper__label")
-    }
+  getInstallText() {
+    return cy.get(':nth-child(3) > .v-stepper__wrapper > p');
+  }
 
-    getSubHeader3() {
-        return cy.get(":nth-child(6) > .v-stepper__label")
-    }
+  getSubheader2() {
+    return cy.get(':nth-child(4) > .v-stepper__label');
+  }
 
-    getTwoFactorButton() {
-        return cy.get(".v-toolbar__content > .v-btn > .v-btn__content > .v-icon")
-    }
+  getSubHeader3() {
+    return cy.get(':nth-child(6) > .v-stepper__label');
+  }
 
-    getPasswordHeading() {
-        return cy.get(".heading")
-    }
+  getTwoFactorButton() {
+    return cy.get('.v-toolbar__content > .v-btn > .v-btn__content > .v-icon');
+  }
 
-    getWalletPassword() {
-        return cy.get('#input-223')
-    }
+  getPasswordHeading() {
+    return cy.get('.heading');
+  }
 
-    getWalletConfirmPassword() {
-        return cy.get('#input-225')
-    }
+  getWalletPassword() {
+    return cy.get('#input-223');
+  }
 
-    getCancelButton() {
-        return cy.get(".mr-2 > .v-btn__content")
-    }
+  getWalletConfirmPassword() {
+    return cy.get('#input-225');
+  }
 
-    getSubmitButton() {
-        return cy.get(".base > .v-btn__content")
-    }
+  getCancelButton() {
+    return cy.get('.mr-2 > .v-btn__content');
+  }
 
-    getBackButton() {
-        return cy.get(".v-toolbar__content > .v-btn > .v-btn__content > .v-icon")
-    }
+  getSubmitButton() {
+    return cy.get('.base > .v-btn__content');
+  }
 
-    getEncryptionHeading() {
-        return cy.get(".rounded-corners > .v-card__title")
-    }
+  getBackButton() {
+    return cy.get('.v-toolbar__content > .v-btn > .v-btn__content > .v-icon');
+  }
 
-    getEncryptionPhrase() {
-        return cy.get("#input-234")
-    }
+  getEncryptionHeading() {
+    return cy.get('.rounded-corners > .v-card__title');
+  }
 
-    getEncryptionPassword() {
-        return cy.get("#input-239")
-    }
+  getEncryptionPhrase() {
+    return cy.get('#input-234');
+  }
 
-    getEncryptionConfirmPW() {
-        return cy.get('#input-241')
-    }
+  getEncryptionPassword() {
+    return cy.get('#input-239');
+  }
+
+  getEncryptionConfirmPW() {
+    return cy.get('#input-241');
+  }
 }
 
-export default new sidebarMenu() 
+export default new SidebarMenu();

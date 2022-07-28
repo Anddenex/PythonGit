@@ -1,79 +1,79 @@
-class registerSmartNode {
-    app_Login() {
-        cy.wplogin(Cypress.env('email'), Cypress.env('password'));
-    }
+class RegisterSmartNode {
+  app_Login() {
+    cy.wplogin(Cypress.env('email'), Cypress.env('password'));
+  }
 
-    getpriceCellLabel() {
-        return cy.get('[class="mepr_price_cell_label"]');
-    }
-    
-    getNodePrice() {
-        return cy.get('[class="mepr_price_cell"]');
-    }
+  getpriceCellLabel() {
+    return cy.get('[class="mepr_price_cell_label"]');
+  }
 
-    getLabelHeaders() {
-        return cy.get('[class="mp-form-label"]');
-    }
+  getNodePrice() {
+    return cy.get('[class="mepr_price_cell"]');
+  }
 
-    getTermsText() {
-        return cy.get('[class="mepr-checkbox-field mepr-form-input"]');
-    }
+  getLabelHeaders() {
+    return cy.get('[class="mp-form-label"]');
+  }
 
-    getTermsCheckbox() {
-        return cy.get('#mepr_agree_to_tos1');
-    }
+  getTermsText() {
+    return cy.get('[class="mepr-checkbox-field mepr-form-input"]');
+  }
 
-    getPrivacyCheckbox() {
-        return cy.get('#mepr_agree_to_privacy_policy1');
-    }
+  getTermsCheckbox() {
+    return cy.get('#mepr_agree_to_tos1');
+  }
 
-    getSmartNodeButton() {
-        return cy.get('[class="mepr-submit"]');
-    }
+  getPrivacyCheckbox() {
+    return cy.get('#mepr_agree_to_privacy_policy1');
+  }
 
-    getIndicatorSteps() {
-        return cy.get('[class="wpforms-page-indicator-steps"]');
-    }
+  getSmartNodeButton() {
+    return cy.get('[class="mepr-submit"]');
+  }
 
-    getFormsLabel() {
-        return cy.get('[class="wpforms-field-label"]');
-    }
+  getIndicatorSteps() {
+    return cy.get('[class="wpforms-page-indicator-steps"]');
+  }
 
-    getFormDescription() {
-        return cy.get('[class="wpforms-field-description"]');
-    }
+  getFormsLabel() {
+    return cy.get('[class="wpforms-field-label"]');
+  }
 
-    getNextButton() {
-        return cy.get('[class="wpforms-page-button wpforms-page-next"]')
-    }
+  getFormDescription() {
+    return cy.get('[class="wpforms-field-description"]');
+  }
 
-    getTypeEmail() {
-        return cy.get('[class="wpforms-field-large wpforms-field-required"]')
-    }
+  getNextButton() {
+    return cy.get('[class="wpforms-page-button wpforms-page-next"]');
+  }
 
-    getInlineLabels() {
-        return cy.get('[class="wpforms-field-label-inline"]')
-    }
+  getTypeEmail() {
+    return cy.get('[class="wpforms-field-large wpforms-field-required"]');
+  }
 
-    getCheckBoxClick() {
-        return cy.get('[type="checkbox"]')
-    }
+  getInlineLabels() {
+    return cy.get('[class="wpforms-field-label-inline"]');
+  }
 
-    getInitials() {
-        return cy.get('[type="text"]')
-    }
+  getCheckBoxClick() {
+    return cy.get('[type="checkbox"]');
+  }
 
-    getWriteSignature() {
-        return cy.get('[class="wpforms-signature-canvas loaded"]')
-    }
+  getInitials() {
+    return cy.get('[type="text"]');
+  }
 
-    getSignatureClear() {
-        return cy.get('[class="wpforms-signature-clear"]')
-    }
+  getWriteSignature() {
+    return cy.get('[class="wpforms-signature-canvas loaded"]');
+  }
 
-    getTypeSubmit() {
-        return cy.get('[type="submit"]')
-    }
+  getSignatureClear() {
+    return cy.get('[class="wpforms-signature-clear"]');
+  }
+
+  getTypeSubmit() {
+    return cy.get('[type="submit"]');
+  }
 }
 
-export default new registerSmartNode() 
+export default new RegisterSmartNode();

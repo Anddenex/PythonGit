@@ -1,44 +1,43 @@
-class cypressCommands {
+class CypressCommands {
+  openWP() {
+    return cy.visit('https://giveblockchain.io/login/');
+  }
 
-    openWP() {
-        return cy.visit("https://giveblockchain.io/login/");
-    }
-    
-    getuserEmail() {
-        return cy.get("#user_login");
-    }
+  getuserEmail() {
+    return cy.get('#user_login');
+  }
 
-    getuserPassword() {
-        return cy.get("#user_pass");
-    }
+  getuserPassword() {
+    return cy.get('#user_pass');
+  }
 
-    getsubmitButton() {
-        return cy.get("#wp-submit");
-    }
+  getsubmitButton() {
+    return cy.get('#wp-submit');
+  }
 
-    openApp() {
-        return cy.visit('login');
-    }
+  openApp() {
+    return cy.visit('login');
+  }
 
-    getAppLoginButton() {
-        return cy.get("button[type='submit']");
-    }
+  getAppLoginButton() {
+    return cy.get("button[type='submit']");
+  }
 
-    getAppTitle() {
-        return cy.get('[class="v-card__title"]')
-    }
+  getAppTitle() {
+    return cy.get('[class="v-card__title"]');
+  }
 
-    getCryptoProduct() {
-        return cy.get("#input-124")
-    }
+  getCryptoProduct() {
+    return cy.get('#input-124');
+  }
 
-    getProductText() {
-        return cy.get('tbody > tr > :nth-child(2)')
-    }
+  getProductText() {
+    return cy.get('tbody > tr > :nth-child(2)');
+  }
 
-    getCoinProduct() {
-        return cy.get('[class="v-text-field__slot"]')
-    }
+  getCoinProduct() {
+    return cy.get('[class="v-text-field__slot"]');
+  }
 }
 
-export default new cypressCommands() 
+export default new CypressCommands();
