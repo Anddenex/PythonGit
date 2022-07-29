@@ -11,6 +11,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint', 'prettier'],
+  ignorePatterns: ['cypress.config.js'],
   rules: {
     'class-methods-use-this': 'off',
     'no-undef': 'warn',
@@ -25,5 +26,6 @@ module.exports = {
     Cypress: 'true',
     expect: 'true',
     beforeEach: 'true',
+    before: 'true',
   },
 };

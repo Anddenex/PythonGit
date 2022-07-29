@@ -12,7 +12,6 @@ describe('Login', () => {
       expect($h3.text()).to.eq('Login');
     });
 
-    // You can also assert the text with the following test case
     cy.get('h3.brandPrimary--text').should('have.text', 'Login');
 
     cy.get('#email').click();
