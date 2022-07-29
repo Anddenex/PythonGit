@@ -14,27 +14,18 @@ import CypressCommands from '../e2e/App_Page_Objects/Cypress_Command';
 Cypress.Commands.add('login', (email, password) => {
   CypressCommands.openApp();
   cy.url().should('include', 'giveblockchain');
-  CypressCommands.getuserEmail().type(email);
-  CypressCommands.getuserPassword().type(password);
-  cy.get("button[type='submit']").click();
-  cy.get('[class="v-card__title"]').eq(1).should('have.text', 'Current Prices');
+  CypressCommands.getUserEmail().type(email);
+  CypressCommands.getUserPassword().type(password);
+  CypressCommands.getAppLoginButton().click();
+  CypressCommands.getAppTitle.eq(1).should('have.text', 'Current Prices');
 });
 
 Cypress.Commands.add('wplogin', (email, password) => {
   CypressCommands.openWP();
   cy.url().should('include', 'giveblockchain');
-  CypressCommands.getuserEmail().type(email);
-  CypressCommands.getuserPassword().type(password);
-  CypressCommands.getsubmitButton().click();
-  cy.url().should('include', '/dashboard/');
-});
-
-Cypress.Commands.add('wordpresslogin', (email, password) => {
-  cy.visit('https://giveblockchain.io/login');
-  cy.url().should('include', 'giveblockchain');
-  cy.get('#user_login').type(email);
-  cy.get('#user_pass').type(password);
-  cy.get('#wp-submit').click();
+  CypressCommands.getUserEmail().type(email);
+  CypressCommands.getUserPassword().type(password);
+  CypressCommands.getSubmitButton().click();
   cy.url().should('include', '/dashboard/');
 });
 

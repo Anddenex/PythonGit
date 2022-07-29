@@ -4,60 +4,31 @@ class AppGive {
   }
 
   // This section is for Login functions
-  getuserEmail() {
+  getUserEmail() {
     return cy.get('#user_login');
   }
 
-  getuserPassword() {
+  getUserPassword() {
     return cy.get('#user_pass');
   }
 
-  getsubmitButton() {
+  getSubmitButton() {
     return cy.get('#wp-submit');
   }
 
-  // This section covers HTML header and paragraph elements(i.e h1, h2, h3, etc..., p)
-  getH1() {
-    return cy.get('h1');
-  }
-
-  getH2() {
-    return cy.get('h2');
-  }
-
-  getH3() {
-    return cy.get('h3');
-  }
-
-  getH4() {
-    return cy.get('h4');
-  }
-
-  getH5() {
-    return cy.get('h5');
-  }
-
-  getH6() {
-    return cy.get('h6');
-  }
-
-  getparagraphText() {
-    return cy.get('p');
-  }
-
-  getcardLink() {
+  getCardLink() {
     return cy.get('[class="column-link"]');
   }
 
-  getappPageTitle() {
+  getAppPageTitle() {
     return cy.get('[class="v-card__title"]');
   }
 
-  getnodePageTitle() {
+  getNodePageTitle() {
     return cy.get('[class="v-card__title text-capitalize"]');
   }
 
-  getsharePageTitle() {
+  getSharePageTitle() {
     return cy.get('[class="v-card__title text-h6 text-sm-h5"]');
   }
 }

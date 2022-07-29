@@ -15,6 +15,8 @@ module.exports = {
     'class-methods-use-this': 'off',
     'no-undef': 'warn',
     'no-plusplus': 'off',
+    'no-unused-vars': 'warn',
+    'import/no-extraneous-dependencies': 'warn',
   },
   globals: {
     describe: 'true',

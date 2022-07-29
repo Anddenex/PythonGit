@@ -3,15 +3,15 @@ class CypressCommands {
     return cy.visit('https://giveblockchain.io/login/');
   }
 
-  getuserEmail() {
+  getUserEmail() {
     return cy.get('#user_login');
   }
 
-  getuserPassword() {
+  getUserPassword() {
     return cy.get('#user_pass');
   }
 
-  getsubmitButton() {
+  getSubmitButton() {
     return cy.get('#wp-submit');
   }
 

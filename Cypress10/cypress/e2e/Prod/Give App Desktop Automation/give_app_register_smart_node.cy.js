@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import RegisterSmartNode from '../../App_Page_Objects/Register_Smart_Node';
-import appGive from '../../App_Page_Objects/WP_Dashboard';
-import recurrentElements from '../../App_Page_Objects/Ubiquitous_Elements';
+import AppGive from '../../App_Page_Objects/WP_Dashboard';
+import RecurrentElements from '../../App_Page_Objects/Ubiquitous_Elements';
 
 describe('Login', () => {
   beforeEach(() => {
@@ -10,8 +10,8 @@ describe('Login', () => {
 
   it('Document Test - Title Properties', () => {
     cy.visit('https://giveblockchain.io/register-smart-node/');
-    recurrentElements.getH5().should('have.text', 'Smart Node');
-    recurrentElements.getparagraphText().should(($ptext) => {
+    RecurrentElements.getH5().should('have.text', 'Smart Node');
+    RecurrentElements.getParagraphText().should(($ptext) => {
       expect($ptext).to.have.length(2);
       expect($ptext.first(), 'Confirming Paragraph Text: ').to.contain(
         'NOTE: Running Give Nodes will not be possible until the Give Blockchain goes live, which will be sometime in early 2022. All who have purchased nodes before this will be notified as soon as this happens.'
@@ -57,9 +57,8 @@ describe('Login', () => {
     });
     RegisterSmartNode.getSmartNodeButton().click();
 
-    appGive.getH4().should('have.text', 'Disclosures');
-    appGive
-      .getparagraphText()
+    AppGive.getH4().should('have.text', 'Disclosures');
+    AppGive.getParagraphText()
       .first()
       .should(
         'have.text',

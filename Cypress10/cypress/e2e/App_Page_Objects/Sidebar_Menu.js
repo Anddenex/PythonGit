@@ -7,17 +7,17 @@ class SidebarMenu {
     return cy.get('#menu-icon');
   }
 
-  getsidebar_nav() {
+  getSidebarNav() {
     return cy.get(
       "[class='v-icon notranslate mdi mdi-chevron-down theme--light']"
     );
   }
 
-  getsubmenu_nav() {
+  getSubmenuNav() {
     return cy.get("[class='v-list-item__title']");
   }
 
-  getshare_text() {
+  getShareText() {
     return cy.get('[class="v-card__text text-center"]');
   }
 
@@ -25,27 +25,27 @@ class SidebarMenu {
     return cy.get('[class="v-btn__content"]');
   }
 
-  getsidebarProfileHeading() {
+  getSidebarProfileHeading() {
     return cy.get('[class="ui-heading"]');
   }
 
-  getsidebarFormLabel() {
+  getSidebarFormLabel() {
     return cy.get('[class="field-label"]');
   }
 
-  getsidebarPhoneLabel() {
+  getSidebarPhoneLabel() {
     return cy.get('[class="phone-label"]');
   }
 
-  getsidebarNameLabel() {
+  getSidebarNameLabel() {
     return cy.get('[class="ui-input"]');
   }
 
-  getsidebarButtonTitle() {
+  getSidebarButtonTitle() {
     return cy.get('[class="button-title"]');
   }
 
-  getsidebardButtonClick() {
+  getSidebardButtonClick() {
     return cy.get('.v-toolbar__content > .v-btn > .v-btn__content > .v-icon');
   }
 

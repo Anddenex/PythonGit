@@ -24,7 +24,7 @@ class RecurrentElements {
     return cy.get('h6');
   }
 
-  getparagraphText() {
+  getParagraphText() {
     return cy.get('p');
   }
 }
