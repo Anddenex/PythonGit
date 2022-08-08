@@ -9,7 +9,19 @@ describe('New Core Practice', () => {
     cy.get('[id="password"]').type('Nerd-ThisIsTheWay*1-United');
     // wallet creation and select finish later
     cy.get('[class="button solid log-in-form__submit-button"]').click();
-    cy.get('[class="wallet-setup__button"]')
+    cy.get('[class="wallet-vault-wrapper__heading--title"]')
+      .eq(0)
+      .should('be.visible');
+    cy.get('[class="wallet-vault-wrapper__heading--title"]')
+      .eq(1)
+      .should('be.visible');
+    cy.get('[class="vault-node-wrapper__heading"]').eq(0).should('be.visible');
+    cy.get('[class="vault-node-wrapper__heading"]').eq(1).should('be.visible');
+    cy.get('[class="vault-node-wrapper__heading"]').eq(2).should('be.visible');
+    cy.get('[class="vault-node-wrapper__heading"]').eq(3).should('be.visible');
+    cy.get('[class="vault-node-wrapper__heading"]').eq(4).should('be.visible');
+    cy.get('[class="vault-node-wrapper__heading"]').eq(5).should('be.visible');
+    cy.get('[class="button solid wallet-setup__button"]')
       .should('be.visible')
       .should('have.text', 'Set Up Wallet')
       .click();
@@ -19,7 +31,7 @@ describe('New Core Practice', () => {
     cy.get('[class="icons"]').eq(1).click();
     cy.get('[class="button outlined finishLaterButton"]').click();
     // continue and complete wallet creation
-    cy.get('[class="wallet-setup__button"]')
+    cy.get('[class="button solid wallet-setup__button"]')
       .should('be.visible')
       .should('have.text', 'Set Up Wallet')
       .click();
@@ -51,7 +63,7 @@ describe('New Core Practice', () => {
       'Copy to clipboard: ⌘+C, Enter'
     );
     cy.get('[type="submit"]').click();
-    cy.get('[class="button"]').contains("Yes, I'm Sure").click();
+    cy.get('[class="button solid button"]').contains("Yes, I'm Sure").click();
 
     cy.get('@value1').then((response) => {
       cy.get('[class="input"]').eq(0).type(response);
